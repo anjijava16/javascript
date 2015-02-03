@@ -1,0 +1,1 @@
+DefaultProject.ApplicationAdapter = DS.FixtureAdapter;

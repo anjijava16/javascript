@@ -1,0 +1,10 @@
+<div id="header">
+  <img {{bind-attr src=logoUrl}} alt="Logo">
+  {{#link-to 'customers'}}display customers{{/link-to}}
+  {{#link-to 'customers.new'}}add customer{{/link-to}}
+  {{#link-to 'about'}}about{{/link-to}}
+</div>
+
+<hr>
+
+{{outlet}}

@@ -1,0 +1,37 @@
+<b>Customers</b>
+<div>
+  <table>
+  <tr>
+    <td>sort by: </td>
+    <td {{action 'sortBy' 'id'}}>id</td>
+    <td {{action 'sortBy' 'name'}}>name</td>
+    <td {{action 'sortBy' 'age'}}>age</td>
+  </tr>
+</table>
+</div>
+<div>
+  <i>note: click on table header to sort that column</i>
+</div>
+<table>
+  <thead class="sortable">
+  <tr>
+    <th {{action 'sortBy' 'id'}}>id</th>
+    <th {{action 'sortBy' 'name'}}>name</th>
+    <th {{action 'sortBy' 'age'}}>age</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each filteredContent}}
+    <tr>
+      <td>{{#link-to 'customer' this}}{{id}}{{/link-to}}</td>
+      <td>{{name}}</td>
+      <td>{{age}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+
+<hr>
+
+{{outlet}}

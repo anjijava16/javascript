@@ -1,0 +1,16 @@
+{
+  "name": "concepts",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pwillhan/angularjs",
+  "authors": [
+    "William Han <pwillhan@gmail.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "~1.3.9",
+    "angular-mocks": "~1.3.9",
+    "angular-route": "~1.3.10",
+    "jquery": "~2.1.3",
+    "bootstrap": "~3.3.2"
+  }
+}

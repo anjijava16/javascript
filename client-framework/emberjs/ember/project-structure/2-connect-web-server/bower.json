@@ -1,0 +1,8 @@
+{
+  "name": "2-connect-web-server",
+  "version": "0.0.0",
+  "dependencies": {
+    "ember": "~1.7.1",
+    "jquery": "~2.1.1"
+  }
+}
