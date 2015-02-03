@@ -1,0 +1,15 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "async": "^0.9.0",
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive --timeout 30000",
+    "test_mocha": "node_modules/mocha/bin/mocha --recursive --timeout 30000",
+    "test_multiple_folders": "node_modules/.bin/mocha --recursive --timeout 30000 test/unit test/integration/smoke",
+    "test_find": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
+    "test_smoke": "node_modules/.bin/mocha --recursive  --timeout 30000 test/integration/smoke/*.js"
+  }
+}

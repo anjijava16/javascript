@@ -1,0 +1,15 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "pubsub-js": "^1.5.0",
+    "sinon": "^1.12.2"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
+    "test_spy": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/spy -name '*test.js' | sort -r`",
+    "test_stub": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/stub -name '*test.js' | sort -r`",
+    "test_mock": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/mock -name '*test.js' | sort -r`"
+  }
+}

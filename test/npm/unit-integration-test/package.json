@@ -1,0 +1,11 @@
+{
+    "name": "application-name",
+    "version": "0.0.1",
+    "devDependencies": {
+        "mocha": "^2.0.1"
+    },
+    "scripts": {
+        "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/unit -name '*test.js' | sort -r`",
+        "test-integration": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/integration -name '*test.js' | sort -r`"
+    }
+}

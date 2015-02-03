@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Run the tests
+grunt --no-color ci
+retval=$?
+
+# The node mocha reporter is not outputting the entire XML format that is
+# expected. We must add the XML declaration and wrap it in a root element.
+# We must also trim any content before <testsuite>
+mv results/unit/server-tests.xml results/unit/server-tests.xml.orig
+echo '<?xml version="1.0"?>' > results/unit/server-tests.xml
+echo '<testsuites>' >> results/unit/server-tests.xml
+sed -n '/\<testsuite /,$p' results/unit/server-tests.xml.orig >> results/unit/server-tests.xml
+echo '</testsuites>' >> results/unit/server-tests.xml
+
+if [ $retval -ne 0 ]; then
+  exit 1
+fi

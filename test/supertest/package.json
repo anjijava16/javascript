@@ -1,0 +1,11 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "express": "^4.10.6",
+    "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive --reporter spec --timeout 30000 `find test -name '*test.js' | sort -r`"
+  }
+}

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Bootstrap the environment
+./scripts/bootstrap
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+# Make sure that the build lints
+./scripts/lint
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+# Build the project
+./scripts/build
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+# Run all of the tests
+./scripts/test
+if [ $? -ne 0 ]; then
+  exit 1
+fi

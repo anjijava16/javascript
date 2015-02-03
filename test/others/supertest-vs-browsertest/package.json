@@ -1,0 +1,9 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "express": "^4.6.1",
+    "should": "^4.0.4",
+    "supertest": "^0.13.0"
+  }
+}

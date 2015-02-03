@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Just a preference
+if [ $USER == "root" ]; then
+  echo "Do not run this as root."
+  exit 1
+fi
+
+# Put us as the root
+cd $(dirname "$0") && cd ..
+
+# Make directories for results
+mkdir -p results/unit
+mkdir -p results/logs
+mkdir -p results/coverage
+
+# Install dependencies
+sudo yum install -y nodejs npm
+
+# Install node modules
+echo "Installing node modules..."
+sudo npm install -g grunt-cli >results/logs/npm-install.txt 2>&1
+npm install >>results/logs/npm-install.txt 2>&1
+tar -czf results/logs/npm.tar.gz results/logs/npm-install.txt
+echo ""

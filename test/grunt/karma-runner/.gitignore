@@ -32,23 +32,25 @@ nbproject
 *.komodoproject
 .komodotools
 
+# grunt-html-validation
+validation-staus.json
+validation-status.json
+validation-report.json
+
 # Folders to ignore
 .hg
 .svn
 .CVS
 .idea
-.sass-cache
-.tmp
-**/*.log
-**/.DS_Store
-**/node_modules/
-**/tmp/
-**/log/
-**/data/
-**/uploads/
-**/build/
-**/reports/
-**/results/
-**/temp/
-**/dist/
-**/bower_components/
+node_modules/
+tmp/
+build/
+reports/
+results/
+
+# Tests
+test/index.html
+test/karma.conf.js
+
+# Ignore local config
+env.json

@@ -1,0 +1,18 @@
+{
+    "development": {
+        "protocol": "https",
+        "host": "api.dev-godaddy.com"
+    },
+    "test": {
+        "protocol": "https",
+        "host": "api.test-godaddy.com"
+    },
+    "ote": {
+        "protocol": "https",
+        "host": "api.ote-godaddy.com"
+    },
+    "production": {
+        "protocol": "https",
+        "host": "api.godaddy.com"
+    }
+}

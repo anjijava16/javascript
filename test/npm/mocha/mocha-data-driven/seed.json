@@ -1,0 +1,111 @@
+{
+  "test": "value",
+  "tldConfig": {
+    "ag": {
+      "type": "countryCode",
+      "lengthMax": 63,
+      "lengthMin": 1,
+      "nameServerCountMax": 13,
+      "nameServerCountMin": 0,
+      "periodMax": 10,
+      "periodMin": 1,
+      "supportsPrivacy": false,
+      "supportsRenewAuto": true,
+      "contactTypes": {
+        "registrant": {
+          "required": true
+        },
+        "admin": {
+          "required": true
+        },
+        "tech": {
+          "required": true
+        },
+        "billing": {
+          "required": true
+        }
+      },
+      "productIds": {
+        "1": 40001,
+        "2": 40002,
+        "3": 40003,
+        "4": 40004,
+        "5": 40005,
+        "6": 40006,
+        "7": 40007,
+        "8": 40008,
+        "9": 40009,
+        "10": 40010
+      }
+    },
+    "am": {
+      "type": "countryCode",
+      "lengthMax": 63,
+      "lengthMin": 2,
+      "nameServerCountMax": 4,
+      "nameServerCountMin": 0,
+      "periodMax": 15,
+      "periodMin": 1,
+      "supportsPrivacy": false,
+      "supportsRenewAuto": true,
+      "contactTypes": {
+        "registrant": {
+          "required": true
+        },
+        "admin": {
+          "required": true
+        },
+        "tech": {
+          "required": true
+        },
+        "billing": {
+          "required": true
+        }
+      },
+      "productIds": {
+        "1": 40201,
+        "2": 40202,
+        "3": 40203,
+        "4": 40204,
+        "5": 40205
+      }
+    },
+    "asia": {
+      "type": "generic",
+      "lengthMax": 63,
+      "lengthMin": 1,
+      "nameServerCountMax": 13,
+      "nameServerCountMin": 0,
+      "periodMax": 10,
+      "periodMin": 1,
+      "supportsPrivacy": false,
+      "supportsRenewAuto": true,
+      "contactTypes": {
+        "registrant": {
+          "required": true
+        },
+        "admin": {
+          "required": true
+        },
+        "tech": {
+          "required": true
+        },
+        "billing": {
+          "required": true
+        }
+      },
+      "productIds": {
+        "1": 2770,
+        "2": 2771,
+        "3": 2772,
+        "4": 2773,
+        "5": 2774,
+        "6": 2775,
+        "7": 2776,
+        "8": 2777,
+        "9": 2778,
+        "10": 2779
+      }
+    }
+  }
+}
