@@ -44,7 +44,7 @@ validation-report.json
 .idea
 node_modules/
 tmp/
-build/
+scripts/build/
 reports/
 results/
 
