@@ -1,0 +1,11 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/supertest-authorization-test.js --recursive --timeout 30000"
+  }
+}

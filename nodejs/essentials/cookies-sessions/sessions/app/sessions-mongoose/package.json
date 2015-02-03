@@ -1,0 +1,11 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "connect": "^2.27.4",
+    "express": "^4.10.4",
+    "express-session": "^1.9.2",
+    "mongoose": "^3.8.19",
+    "session-mongoose": "^0.5.2"
+  }
+}

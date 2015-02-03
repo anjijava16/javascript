@@ -1,0 +1,13 @@
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 #{title}
+    p Enter your name to become a member.
+    form(action='/request', method='post')
+      label Name
+      input(type='text', name='name', value='Tom')
+      input(type='hidden', name='_method', value='put')
+      br
+      input(type='submit')

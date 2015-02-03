@@ -1,0 +1,10 @@
+{
+  "development": {
+    "name": "development",
+    "servers": ["dev-server1", "dev-server2"]
+  },
+  "test": {
+    "name": "test",
+    "servers": ["test-server"]
+  }
+}

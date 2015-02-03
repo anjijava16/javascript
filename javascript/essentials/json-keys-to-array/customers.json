@@ -1,0 +1,7 @@
+{
+  "customers": {
+    "tom": {"name": "Tom"},
+    "dick": {"name": "Dick"},
+    "harry": {"name": "Harry"}
+  }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/httpRequest.js"></script>
+</head>
+<body>
+<div ng-app="httpRequest" ng-controller="requestController as requestCtrl">
+  <button class="btn" ng-click="requestCtrl.getTest()">GET Test</button>
+  <button class="btn" ng-click="requestCtrl.postTest()">POST Test</button>
+</div>
+
+</body>
+</html>

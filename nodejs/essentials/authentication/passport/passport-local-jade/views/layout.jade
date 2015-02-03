@@ -1,0 +1,18 @@
+html
+  head
+    title Passport-Local Example
+  body
+  if user
+    p
+      a(href='/') Home
+      | &nbsp
+      a(href='/account') Account
+      | &nbsp
+      a(href='/customers') Customers
+      | &nbsp
+      a(href='/logout') Log Out
+  else
+    p
+      a(href='/') Home
+      | &nbsp
+      a(href='/login') Log In

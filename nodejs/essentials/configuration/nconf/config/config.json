@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "server": "developer.dev-godaddy.com",
+    "protocol": "https"
+  },
+  "test": {
+    "server": "developer.test-godaddy.com",
+    "protocol": "https"
+  },
+  "ote": {
+    "server": "developer.ote-godaddy.com",
+    "protocol": "https"
+  },
+  "prod": {
+    "server": "developer.godaddy.com",
+    "protocol": "https"
+  }
+}

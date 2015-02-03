@@ -1,0 +1,12 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "git-it": "^1.6.0"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node_modules/.bin/git-it server",
+    "git_it": "node_modules/.bin/git-it"
+  }
+}

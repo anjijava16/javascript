@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>title</title>
+</head>
+<body>
+<div class="container">
+  <div>
+    <% if(isAuthenticated) { %>
+    <%- partial('partials/user-loggedin') %>
+    <% } else { %>
+    <%- partial('partials/user-loggedout') %>
+    <% } %>
+  </div>
+  <div>
+    <%- body %>
+  </div>
+  <div>
+    <b>footer</b>
+  </div>
+</div>
+</body>
+</html>
