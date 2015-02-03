@@ -3,10 +3,22 @@ Accessing the backend
 
 https://docs.angularjs.org/guide/concepts
 
-## Installation
+## Server
+
+### Installation
+
+> `npm install`
+
+### Running / Development
+
+> Launch server `node server.js`
+
+## Client
+
+### Installation
 
 > `bower install`
 
-## Running / Development
+### Running / Development
 
 > open app/index.html
