@@ -1,6 +1,10 @@
 sinon basics
 ============
 
+## Good examples
+
+> tight-coupling-test.js
+
 ## Run Test
 
 > `npm test` run unit-tests

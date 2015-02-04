@@ -8,7 +8,7 @@
   },
   "scripts": {
     "pretest": "npm install",
-    "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
+    "test": "node_modules/.bin/mocha --recursive --timeout 30000 test",
     "test_spy": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/01-spy -name '*test.js' | sort -r`",
     "test_stub": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/02-stub -name '*test.js' | sort -r`",
     "test_mock": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/03-mock -name '*test.js' | sort -r`",
