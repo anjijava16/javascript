@@ -9,11 +9,6 @@ The test code sample navigates to google.com, performs actions and validations
 
 $ npm install -g nightwatch
 
-for mac user, use sudo
-
-$ sudo npm install -g nightwatch
-
-
 ### Running the Selenium Server
 
 download the latest selenium-server-standalone from http://selenium-release.storage.googleapis.com/index.html
