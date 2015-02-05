@@ -5,4 +5,4 @@ JavaScriptjQueryPatternFramework_2013_1User/modern/constructor.htm
 
 ## Running / Development
 
-> `node closure-private-variable.js`
+> `node 02-closure-private-variable.js`

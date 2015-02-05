@@ -28,4 +28,3 @@ $ nightwatch -t tests/demotest.js
 ### Reference
 
 > http://nightwatchjs.org/api#assertions
-
