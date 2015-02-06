@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script type="text/javascript">
+  // The "this" value in a (global) function is bound to the global object.
+  function show(){
+    alert(this === window);  // true
+    alert(this);             // [object Window]
+  }
+  show();   // function invocation
+</script>
+
+</body>
+</html>
