@@ -11,7 +11,7 @@ var module = (function(){
     // public area
     add: function(){increment();},
 
-    increment: increment,      // revealing method
-    decrement: decrement       // revealing method
+    increment: increment,      // public - revealing method
+    decrement: decrement       // public - revealing method
   };
 })();
