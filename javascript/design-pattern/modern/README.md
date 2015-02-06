@@ -1,5 +1,7 @@
-design-pattern
-==============
+design-pattern modern
+=====================
+
+JavaScriptjQueryPatternFramework_2013_1User/modern
 
 ## "use strict";
 
