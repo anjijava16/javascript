@@ -12,7 +12,7 @@ var person = {
 
 console.log(person.first);
 
-giveName.apply(person, ["Tom", "apply()"]);
+giveName.apply(person, ["Tom", "apply()"]);  // set "this" to person instance
 //giveName.call(person, "Tom", "call()");  // the built-in function called "call" does the same (not array, a series of arguments.
 
 console.log(person.first + " " + person.last);
