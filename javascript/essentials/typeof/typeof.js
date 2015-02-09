@@ -4,7 +4,10 @@ var person = {
   books: [
     {name: "wpf"},
     {name: "javascript"}
-  ]
+  ],
+  say: function(){
+    console.log('hello');
+  }
 };
 
 for(var s in person){
