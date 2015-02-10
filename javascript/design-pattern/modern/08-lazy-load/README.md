@@ -1,5 +1,5 @@
-07-lazy-load
-============
+lazy-load
+=========
 
 JavaScriptjQueryPatternFramework_2013_1User/modern/lazyload.htm
 

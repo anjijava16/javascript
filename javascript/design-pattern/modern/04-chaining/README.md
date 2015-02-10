@@ -1,5 +1,5 @@
-04-chaining
-============
+chaining
+========
 
 JavaScriptjQueryPatternFramework_2013_1User/modern/chaining.htm
 

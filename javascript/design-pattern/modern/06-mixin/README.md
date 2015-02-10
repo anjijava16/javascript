@@ -1,5 +1,5 @@
-06-mixin
-========
+mixin
+=====
 
 JavaScriptjQueryPatternFramework_2013_1User/modern/mixin.htm
 

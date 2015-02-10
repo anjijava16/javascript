@@ -1,4 +1,4 @@
-var customersJson = require('./customers.json')
+var customersJson = require('./customers.json');
 
 var usernames = Object.keys(customersJson.customers);
 console.log(usernames);

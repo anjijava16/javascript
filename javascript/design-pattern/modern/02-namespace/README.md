@@ -1,5 +1,5 @@
-02-namespace
-============
+namespace
+=========
 
 JavaScriptjQueryPatternFramework_2013_1User/modern/namespace.htm
 

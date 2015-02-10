@@ -1,5 +1,5 @@
-03-module
-=========
+module
+======
 
 ```
 The Module pattern is JavaScript's manifestation of the Gang-of-Four Singleton pattern. 
