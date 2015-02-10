@@ -1,3 +1,6 @@
+// Partial Application occurs when you apply a partial set of parameters to a function. In the latter scenario the function
+// remembers the first set of arguments
+
 function concat(first, last){
   if(typeof last === "undefined"){
     return function(last){      // partial function
