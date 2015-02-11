@@ -1,7 +1,7 @@
 var express = require('express');
 var partials = require('express-partials');
 var app = express();
-var routes = require('./routes');
+var routes = require('./routes/index');
 var errorHandlers = require('./middleware/errorhandlers');
 var log = require('./middleware/log');
 var cookieParser = require('cookie-parser');
@@ -12,6 +12,7 @@ var RedisStore = require('connect-redis')(session);
 var util = require('./middleware/utilities');
 var flash = require('connect-flash');
 var config = require('./config');
+var io = require('./socket.io/index.js');
 
 app.set('view engine', 'ejs');
 app.set('view options', {defaultLayout: 'layout'});
@@ -56,6 +57,5 @@ app.get('/error', function (req, res, next) {
 app.use(errorHandlers.error);
 app.use(errorHandlers.notFound);
 
-app.listen(config.port, function () {
-  console.log('app started at port 3000');
-});
+var server = app.listen(config.port);
+io.startIo(server);
