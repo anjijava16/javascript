@@ -9,4 +9,4 @@ One use case for custom properties is to cache the results (the return value) of
 it doesn’t have to redo potentially heavy computations. Caching the results of a function is also known as memoization.
 ```
 
-> `01-function-cache.js`
+> `node 01-function-cache.js`

@@ -16,4 +16,4 @@ The cons of the configuration objects are:
  - Property names cannot be minified
 ```
 
-> `01-function-cache.js`
+> `node config-obj.js`
