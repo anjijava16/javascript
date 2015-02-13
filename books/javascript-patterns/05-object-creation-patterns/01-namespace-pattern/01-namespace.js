@@ -15,7 +15,7 @@ var module2 = {};
 // AFTER: 1 global
 
 // global object
-var MYAPP = {};
+var MYAPP = MYAPP || {};
 
 // constructors
 MYAPP.Parent = function(){};
