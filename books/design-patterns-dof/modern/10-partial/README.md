@@ -1,4 +1,4 @@
-partial
+partial - currying
 ==========
 
 JavaScriptjQueryPatternFramework_2013_1User/modern/partial.htm
