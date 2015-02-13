@@ -4,7 +4,7 @@ YAHOO.util.Event = YAHOO.util.Event || {};
 YAHOO.util.Dom = YAHOO.util.Dom || {};
 
 var myFunction = function(){
-  // dependencies
+  // declaring dependencies
   var event = YAHOO.util.Event;
   var dom = YAHOO.util.Dom;
   // use event and dom variables
