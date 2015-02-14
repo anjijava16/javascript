@@ -31,3 +31,6 @@ MYAPP.util.array = (function () { // module
     // ... more methods and properties
   };
 })();
+// Usage
+console.log(MYAPP.util.array.isArray([1,2]));  // true
+console.log(MYAPP.util.array.name);   // Tom
