@@ -2,9 +2,15 @@
 
 var calculator = {
   total: 0,
-  add: function(x) {this.total += x;},
-  sub: function(x) {this.total -= x;},
-  show: function() { console.log("total = " + this.total); }
+  add: function (x) {
+    this.total += x;
+  },
+  sub: function (x) {
+    this.total -= x;
+  },
+  show: function () {
+    console.log("total = " + this.total);
+  }
 }
 
 calculator.add(10);  // method invocation

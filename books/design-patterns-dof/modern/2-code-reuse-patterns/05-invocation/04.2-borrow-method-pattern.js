@@ -1,6 +1,5 @@
-//
 var lender = {
-  giveName: function(first, last){
+  giveName: function (first, last) {
     this.first = first;
     this.last = last;
   }

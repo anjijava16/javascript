@@ -1,7 +1,7 @@
 // You can use the apply function to invoke a function and then set the "this" value yourself.
 // Two arguments are needed: first the value for "this", and secondly any array of arguments used to invoke the function.
 
-function giveName(first, last){
+function giveName(first, last) {
   this.first = first;
   this.last = last;
 };

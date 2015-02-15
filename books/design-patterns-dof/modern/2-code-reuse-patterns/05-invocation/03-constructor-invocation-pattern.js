@@ -9,11 +9,17 @@
 // from a Constructor Invocation pattern to a Function Invocation pattern that binds “this” to the global object,
 // so forgetting the new can be a serious problem. We can use ('use strict';) the keyword to address forgetting the new issue.
 
-  var Calculator = function(){
+var Calculator = function () {
   this.total = 0;
-  this.add = function(x) {this.total += x;};
-  this.sub = function(x) {this.total -= x;};
-  this.show = function() { console.log("total = " + this.total); }
+  this.add = function (x) {
+    this.total += x;
+  };
+  this.sub = function (x) {
+    this.total -= x;
+  };
+  this.show = function () {
+    console.log("total = " + this.total);
+  }
 }
 
 var calc = new Calculator();   // constructor invocation
