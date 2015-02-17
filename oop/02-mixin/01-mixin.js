@@ -16,7 +16,7 @@ MYAPP.util.mixin = function(sources, destination){
       }
     }
   }
-}
+};
 
 MYAPP.model.Person = function(){
   this.name;
