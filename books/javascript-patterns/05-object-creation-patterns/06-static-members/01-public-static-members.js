@@ -18,4 +18,3 @@ console.log(Gadget.isShiny());  // "you bet"
 // creating an instance and calling a method
 var iphone = new Gadget();
 iphone.setPrice(500);
-

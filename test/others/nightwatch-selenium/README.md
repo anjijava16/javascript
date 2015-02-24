@@ -13,7 +13,7 @@ $ npm install -g nightwatch
 
 download the latest selenium-server-standalone from http://selenium-release.storage.googleapis.com/index.html
 
-By the time it is written (9/23/2014), I did following
+By the time it is written (2/23/2015), I did following
 
 download the latest selenium-server-standalone-2.43.1.jar
 
