@@ -21,4 +21,4 @@ function Universe(){
 // testing
 var uni = new Universe();
 var uni2 = new Universe();
-console.log(uni === uni2);
+console.log(uni === uni2);  // true

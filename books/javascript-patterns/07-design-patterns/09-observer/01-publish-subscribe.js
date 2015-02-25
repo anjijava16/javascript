@@ -24,6 +24,7 @@ var publisher = {
         subscribers[i](arg);
       }
       else{
+        // unsubscribe
         if(subscribers[i] === arg){
           subscribers.splice(i, 1);
         }
@@ -33,8 +34,7 @@ var publisher = {
 };
 
 function makePublisher(o){
-  var i;
-  for(i in publisher){
+  for(var i in publisher){
     if(publisher.hasOwnProperty(i) && typeof publisher[i] === "function"){
       o[i] = publisher[i];
     }
@@ -42,6 +42,7 @@ function makePublisher(o){
   o.subscribers = {any: []};
 }
 
+//# paper publisher, joe subscriber
 var paper = {
   daily: function(){
     this.publish("big news today");
@@ -69,3 +70,17 @@ paper.daily();
 paper.daily();
 paper.daily();
 paper.monthly();
+
+//# joe publisher, paper subscriber
+joe.tweet = function(msg){
+  this.publish(msg);
+};
+
+makePublisher(joe);
+
+paper.readTweets = function(tweet){
+  console.log('Call big meeting! Someone ' + tweet);
+};
+joe.subscribe(paper.readTweets);
+
+joe.tweet("hated the paper today");
