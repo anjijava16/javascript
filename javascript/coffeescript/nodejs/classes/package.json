@@ -5,7 +5,7 @@
     "coffee-script": "^1.8.0"
   },
   "scripts": {
-    "compile": "node_modules/coffee-script/bin/coffee --bare --output server --compile coffeeServer",
-    "test": "npm run compile && node server/test.js"
+    "compile": "node_modules/coffee-script/bin/coffee --bare --output test --compile coffeeTest",
+    "test": "npm run compile && node test/test.js"
   }
 }
