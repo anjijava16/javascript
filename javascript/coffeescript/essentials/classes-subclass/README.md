@@ -1,5 +1,5 @@
-npm test
-==========================
+classes-subclass
+================
 
 ## Installation
 

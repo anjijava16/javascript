@@ -1,5 +1,5 @@
-npm test
-==========================
+string-interpolation
+====================
 
 ## Installation
 
