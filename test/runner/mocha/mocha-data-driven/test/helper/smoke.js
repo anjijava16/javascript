@@ -1,4 +1,4 @@
-var SMOKE = {};
+var SMOKE = SMOKE || {};
 SMOKE.testCustomer = function(){
   it('test-1 {type} {name}', function (ctx) {
     console.log('test-1' + ctx.type + ' customer ' + ctx.name);
