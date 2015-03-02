@@ -22,4 +22,3 @@ function iterateOptions(options){
 
 iterateOptions(package);
 iterateOptions('test');  // nothing happens
-

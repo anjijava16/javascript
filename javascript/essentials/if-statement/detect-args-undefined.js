@@ -3,7 +3,7 @@ function test1(x, y){
   //console.log(typeof(y));
   //console.log('undefined' !== typeof(x));
   //console.log('undefined' !== typeof(x) && 'undefined' !== typeof(y));
-  if('undefined' !== typeof(x) && 'undefined' !== typeof(y)){
+  if(x && y){
     console.log('both defined');
   }
   else if(x){
