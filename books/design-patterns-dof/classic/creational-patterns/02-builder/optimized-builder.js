@@ -99,4 +99,4 @@ Patterns.namespace("Classic").Builder = (function () {
   truck.say();
 
   log.show();
-})()
+})();
