@@ -1,7 +1,7 @@
 var assert = require('assert');
 var data_driven = require('data-driven');
 var MYAPP = require('../src/myapp');
-var SMOKE = require('./helper/SMOKE');
+var SMOKE = require('./helper/smoke');
 
 describe.only('#data driven function reuse', function () {
   describe('vip customers', function () {

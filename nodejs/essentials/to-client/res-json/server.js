@@ -1,4 +1,3 @@
-var http = require('http');
 var express = require('express');
 
 var app = express();
@@ -13,7 +12,6 @@ app.get('/contact', function(req, res) {
     res.json({name: "contact"});
 });
 
-http.createServer(app).listen(3000, function () {
-    console.log('app started at port 3000');
+app.listen(3000, function () {
+  console.log('app started at port 3000');
 });
-

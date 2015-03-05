@@ -55,4 +55,3 @@ app.post('/signup', function(req, res){
 app.listen(3000, function () {
     console.log('app started at port 3000');
 });
-
