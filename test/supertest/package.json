@@ -6,6 +6,7 @@
     "supertest": "^0.15.0"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --recursive --reporter spec --timeout 30000 `find test -name '*test.js' | sort -r`"
+    "pretest": "npm install",
+    "test": "node_modules/.bin/mocha --recursive --reporter spec --timeout 30000 test"
   }
 }

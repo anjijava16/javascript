@@ -7,14 +7,4 @@ npm mocha data-driven
 
 ## Run Test
 
-*run all tests ends with test.js in test folder*
-
-```
-package.json
-
-    "scripts": {
-        "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`"
-    }
-```
-
 > `npm test`

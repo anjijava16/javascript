@@ -6,6 +6,6 @@
     "mocha": "^2.0.1"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`"
+    "test": "node_modules/.bin/mocha --recursive --timeout 30000 test"
   }
 }

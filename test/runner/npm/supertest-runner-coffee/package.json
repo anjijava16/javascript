@@ -11,9 +11,10 @@
     "supertest": "^0.13.0"
   },
   "scripts": {
+    "pretest": "npm install",
     "compile": "node_modules/coffee-script/bin/coffee --bare --output server --compile coffeeServer && node_modules/coffee-script/bin/coffee --bare --output src --compile coffeeSrc && node_modules/coffee-script/bin/coffee --bare --output test --compile coffeeTest",
-    "test": "npm run compile && node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
-    "test_cover": "npm run compile && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
-    "test_watch": "node_modules/.bin/mocha --recursive --timeout 30000 --watch `find test -name '*test.js' | sort -r`"
+    "test": "npm run compile && node_modules/.bin/mocha --recursive --timeout 30000 test",
+    "test_cover": "npm run compile && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive --timeout 30000 test",
+    "test_watch": "node_modules/.bin/mocha --recursive --timeout 30000 --watch test"
   }
 }

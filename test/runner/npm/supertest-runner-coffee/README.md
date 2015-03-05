@@ -7,16 +7,6 @@ npm nodejs-supertest-runner
 
 ## Running Test
 
-```
-package.json
-
-  "scripts": {
-    "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
-    "test_cover": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
-    "test_watch": "node_modules/.bin/mocha --recursive --timeout 30000 --watch `find test -name '*test.js' | sort -r`"
-  }
-```
-
 > `npm test`
 
 > `npm run test_cover`  <-- code coverage

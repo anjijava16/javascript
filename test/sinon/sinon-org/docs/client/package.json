@@ -7,9 +7,10 @@
     "sinon": "^1.12.2"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --recursive --timeout 30000 `find test -name '*test.js' | sort -r`",
-    "test_spy": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/spy -name '*test.js' | sort -r`",
-    "test_stub": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/stub -name '*test.js' | sort -r`",
-    "test_mock": "node_modules/.bin/mocha --recursive --timeout 30000 `find test/mock -name '*test.js' | sort -r`"
+    "pretest": "npm install",
+    "test": "node_modules/.bin/mocha --recursive --timeout 30000 test",
+    "test_spy": "node_modules/.bin/mocha --recursive --timeout 30000 test/spy",
+    "test_stub": "node_modules/.bin/mocha --recursive --timeout 30000 test/stub",
+    "test_mock": "node_modules/.bin/mocha --recursive --timeout 30000 test/mock"
   }
 }
