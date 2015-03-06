@@ -13,6 +13,7 @@ var Patterns = {
 };
 
 Patterns.namespace("Classic").Facade = (function () {
+  // sub systems, Bank, Credit, Background
   var Bank = function(){
     this.verify = function(name, amount){
       // complex logic...
@@ -31,6 +32,8 @@ Patterns.namespace("Classic").Facade = (function () {
       return true;
     }
   };
+
+  // facade - unified interface
   var Mortgage = function(name){
     this.name = name;
   };
