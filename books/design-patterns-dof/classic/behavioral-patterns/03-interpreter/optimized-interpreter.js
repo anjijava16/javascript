@@ -13,7 +13,6 @@ var Patterns = {
 };
 
 Patterns.namespace("Classic").Interpreter = (function () {
-
   var Context = function (input) {
     this.input = input;
     this.output = 0;
