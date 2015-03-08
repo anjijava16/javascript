@@ -40,7 +40,6 @@ Patterns.namespace("Classic").Memento = (function () {
         this.memento = null;
       }
     },
-
     memento: null
   };
 
@@ -79,7 +78,6 @@ Patterns.namespace("Classic").Memento = (function () {
   john.name = "Superman";
 
   // restore original state
-
   mike.dehydrate();
   john.dehydrate();
 
