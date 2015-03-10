@@ -1,43 +1,68 @@
 var Model = function(names){
   this.names = names;
-  this.nameAdded = new Observer();
-  this.nameRemoved = new Observer();
+  console.log('#Model', this.names); // ['Bob Smith', 'Cindy Jackson', 'Alan Wong']
+  this.nameAddedObserver = new Observer();
+  this.nameRemovedObserver = new Observer();
 };
 Model.prototype = {
   add: function(name){
     this.names.push(name);
-    this.nameAdded.notify(this.names);
+    this.nameAddedObserver.notify(this.names);
   },
   remove: function(index){
     this.names.splice(index, 1);
-    this.nameRemoved.notify(this.names);
+    this.nameRemovedObserver.notify(this.names);
   },
   getNames: function(){ return this.names; }
 };
+
 var Observer = function(){ this.observers = []; };
 Observer.prototype = {
-  attach: function(callback){ this.observers.push(callback); },
+  attach: function(callback){
+    this.observers.push(callback);
+  },
   notify: function(n){
+    console.log('#Observer', n);
     for(var i = 0, len = this.observers.length; i < len; i++){
+      console.log('#Observer', this.observers[i]);
       this.observers[i](n);
     }
   }
 };
-var Controller = function(model){ this.model = model; };
+
+var Controller = function(model){
+  this.model = model;
+  console.log('#Controller:', this.model);  // { names: ['Bob Smith', 'Cindy Jackson', 'Alan Wong'] }
+};
 Controller.prototype = {
   addName: function(name){ this.model.add(name); },
   removeName: function(index){ this.model.remove(index); }
 };
-var View = function(elements){ this.elements = elements; };
+
+var View = function(elements){
+  this.elements = elements;
+};
 View.prototype = {
   init: function(model, controller){
+    console.log('#View:', model);  // { names: ['Bob Smith', 'Cindy Jackson', 'Alan Wong'] }
     var self = this;
-    model.nameAdded.attach(function (n){ self.refresh(n); });
+    model.nameAddedObserver.attach(
+      function(n){ self.refresh(n); }
+    );
+    console.log('#View nameAddedObserver', model.nameAddedObserver.observers);
+    model.nameRemovedObserver.attach(
+      function(n){ self.refresh(n); }
+    );
+    console.log('#View nameRemovedObserver', model.nameRemovedObserver.observers);
+
     this.elements.addButton.click(function(){
       var name = prompt('Add a new user name: ', '');
-      if(name) controller.addName(name);
+      if(name) {
+        controller.addName(name);
+      }
     });
     this.elements.removeButton.click(function(){
+      console.log('#View', self.elements.nameList.get(0).selectedIndex);
       var index = self.elements.nameList.get(0).selectedIndex;
       if(index != -1){ controller.removeName(index); }
       else{ alert("No user was selected"); }
@@ -49,10 +74,6 @@ View.prototype = {
     for(var i = 0, len = names.length; i < len; i++){
       this.elements.nameList.append('<option>' + names[i] + '</option>');
     }
-    console.log(len);
-    console.log(this.elements);
-    console.log(this.elements.nameCount);
-    console.log(this.elements.nameCount.text);
     this.elements.nameCount.text("Total users: " + len);
   }
 };
