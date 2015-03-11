@@ -9,38 +9,32 @@ var orders = [
   {id: 4, customerName: "Dick", detail: "java book"},
 ];
 
-function getCustomer(query, cb) {
+function getCustomer(cb) {
   setTimeout(function () {
-    var result = customers.filter(function (item) {
-      return item.name === query;
-    })
-    cb(null, result[0]);
+    cb(null, {customerName: "Tom"});
   }, 500);
 }
 
-function getCustomerOrders(query, cb) {
+function getOrder(cb) {
   setTimeout(function () {
-    var result = orders.filter(function (item) {
-      return item.customerName === query;
-    });
-    cb(null, result);
+    cb(null, {orderName: "IPhone"});
   }, 500);
 }
 
-describe('waterfall test', function () {
+describe('series test', function () {
   it('success', function (done) {
-    async.waterfall(
+    async.series(
       [
         function (callback) {
-          getCustomer("Tom", function (err, customer) {
+          getCustomer(function (err, customer) {
             console.log("#customer", customer);
             callback(null, customer);
           })
         },
-        function (customer, callback) {
-          getCustomerOrders(customer.name, function (err, orders) {
-            console.log("#orders", orders);
-            callback(null, orders);
+        function (callback) {
+          getOrder(function (err, order) {
+            console.log("#order", order);
+            callback(null, order);
           })
         },
       ],
