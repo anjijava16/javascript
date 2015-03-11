@@ -1,3 +1,4 @@
+var assert = require('assert');
 var async = require('async');
 
 var customers = [{name: "Tom"}, {name: "Dick"}, {name: "Harry"}];
@@ -26,32 +27,28 @@ function getCustomerOrders(query, cb) {
   }, 500);
 }
 
-// workflow: getCustomer, then getCustomerOrder
-async.waterfall(
-  [
-    function (callback) {
-      getCustomer("Tom", function (err, customer) {
-        console.log(customer);
-        callback(null, customer);
-      })
-    },
-    function (customer, callback) {
-      getCustomerOrders(customer.name, function (err, orders) {
-        console.log(orders);
-        callback(null, orders);
-      })
-    },
-  ],
+describe('async test', function () {
+  it('success', function (done) {
+    async.waterfall(
+      [
+        function (callback) {
+          getCustomer("Tom", function (err, customer) {
+            console.log("#customer", customer);
+            callback(null, customer);
+          })
+        },
+        function (customer, callback) {
+          getCustomerOrders(customer.name, function (err, orders) {
+            console.log("#orders", orders);
+            callback(null, orders);
+          })
+        },
+      ],
 
-  function (err, results) {
-    console.log("results:", results);
-  }
-);
-
-// WITHOUT async - callback inside callback
-//getCustomer("Tom", function(err, customer){
-//  console.log(customer);
-//  getCustomerOrders(customer.name, function(err, orders){
-//    console.log(orders);
-//  })
-//});
+      function (err, results) {
+        console.log("#results:", results);
+        done();
+      }
+    );
+  });
+});
