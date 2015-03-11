@@ -7,21 +7,19 @@
 </head>
 <body>
 <div style="padding: 15px ; background: beige;">
-  MVC<br/>
+  MVP<br />
   <select id="nameList" size="15" style="width: 210px; border: 1px solid #ccc; padding: 2px;"></select>
-  <br/>
+  <br />
   <span id="nameCount">Count</span>
-  <br/>
-  <br/>
-  <button id="addButton">Add User</button>
-  &nbsp;&nbsp;
+  <br />
+  <br />
+  <button id="addButton">Add User</button>&nbsp;&nbsp;
   <button id="removeButton">Remove User</button>
 </div>
-<script src="model-view-controller.js"></script>
+<script src="model-view-presenter.js"></script>
 <script type="text/javascript">
   $(function () {
     var model = new Model(['Bob Smith', 'Cindy Jackson', 'Alan Wong']);
-    var controller = new Controller(model);
     var elements = {
       nameList: $('#nameList'),
       nameCount: $("#nameCount"),
@@ -29,7 +27,8 @@
       removeButton: $('#removeButton')
     };
     var view = new View(elements);
-    view.init(model, controller);
+    var presenter = new Presenter(model, view);
+    presenter.init();
   });
 </script>
 </body>

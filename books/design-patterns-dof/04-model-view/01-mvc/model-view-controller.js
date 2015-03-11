@@ -25,7 +25,7 @@ Observer.prototype = {
     console.log('#Observer', n);
     for(var i = 0, len = this.observers.length; i < len; i++){
       console.log('#Observer', this.observers[i]);
-      this.observers[i](n);
+      this.observers[i](n);  // invoke function(n){ self.refresh(n); }
     }
   }
 };
