@@ -30,7 +30,7 @@ Patterns.namespace("InAction").DataEntry = (function() {
   var start = function () {
     router = new Routers.Router();
     Backbone.history.start();
-  }
+  };
 
   // Change template token markers to {{ and }}
   _.templateSettings = {
@@ -43,6 +43,7 @@ Patterns.namespace("InAction").DataEntry = (function() {
   Routers.Router = Backbone.Router.extend({
     // ** init pattern
     initialize: function (options) {
+      console.log('#initialize options:', options);
       this.el1 = $("#customers-content");
       this.el2 = $("#form-content");
     },
@@ -83,6 +84,7 @@ Patterns.namespace("InAction").DataEntry = (function() {
       // ** observer pattern
       this.collection.on('reset add update remove change', this.render, this);
       this.collection.fetch();
+      console.log(this.collection);
     },
     render: function (eventName) {
       // total customer count
@@ -199,7 +201,8 @@ Patterns.namespace("InAction").DataEntry = (function() {
 
   // Used to mock database persistence
   if (!window.databaseCustomers) {
-    window.databaseCustomers = [{id: "5f294421-08af-135f-1d22-583245fb67b5", first: "Joan", last: "Kennedy"},
+    window.databaseCustomers = [
+      {id: "5f294421-08af-135f-1d22-583245fb67b5", first: "Joan", last: "Kennedy"},
       {id: "461f92de-a7fc-a90d-4419-958423678d8f", first: "Kevin", last: "McGregor"}];
   }
 
