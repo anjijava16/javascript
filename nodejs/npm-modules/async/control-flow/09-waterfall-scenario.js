@@ -40,13 +40,15 @@ async.waterfall(
         console.log(orders);
         callback(null, orders);
       })
-    },
+    }
   ],
 
   function (err, results) {
     console.log("results:", results);
   }
 );
+
+console.log('#done');
 
 // WITHOUT async - callback inside callback
 //getCustomer("Tom", function(err, customer){
