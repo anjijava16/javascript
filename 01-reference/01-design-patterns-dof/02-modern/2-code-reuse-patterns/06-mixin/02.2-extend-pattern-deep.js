@@ -39,4 +39,4 @@ var employee = {salary: "$45,000"};
 deepExtend(person, employee);
 
 employee.say();
-person.say();
+//person.say();
