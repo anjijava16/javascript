@@ -34,7 +34,7 @@ function copyOwnPropertiesFrom(target, source){
   return target;
 }
 
-function MyArray(){
+function MyArray(/*arguments*/){
   var arr = [];
   // Don't use Array constructor to set up elements (doesn't always work)
   Array.prototype.push.apply(arr, arguments);  // (1)
