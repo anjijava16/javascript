@@ -1,5 +1,5 @@
 // log helper
-var log = (function () {
+var log = function () {
   var log = "";
   return {
     add: function (msg) {
@@ -10,7 +10,7 @@ var log = (function () {
       log = "";
     }
   }
-})();
+}();
 
 var Patterns = {
   namespace: function (name) {

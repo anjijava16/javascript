@@ -1,11 +1,11 @@
 // log helper
-var log = (function () {
+var log = function () {
   var log = "";
   return {
     add: function (msg) { log += msg + "\n"; },
     show: function () { console.log(log); log = ""; }
   }
-})();
+}();
 
 var Patterns = {
   namespace: function (name) {
