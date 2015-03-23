@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  var someVariable = 8;
+  if(window.someVariable){
+    console.log('window someVariable exists');
+  }
+  else{
+    console.log('window someVariable NOT exists');
+  }
+  /*
+   There are two additional ways in which you can check via window; they are roughly equivalent, but a little more explicit.
+   if (window.someVariable !== undefined) { ... }
+   if ('someVariable' in window) { ... }
+   The general way of checking whether a variable exists (and has a value) is via typeof.
+   if (typeof someVariable !== 'undefined') { ... }
+   */
+</script>
+</body>
+</html>
