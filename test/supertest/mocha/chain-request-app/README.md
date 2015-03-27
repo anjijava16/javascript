@@ -1,5 +1,5 @@
-supertest
-=========
+supertest - chain request app
+=============================
 
 ## Running / Development
 
