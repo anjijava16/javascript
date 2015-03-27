@@ -2,7 +2,6 @@
   #Manually simulating an apply() for constructors
  */
 
-
 console.log('new Date(2011, 11, 24):', new Date(2011, 11, 24));
 console.log('Date:', Date);
 // Step1 - Pass the arguments to Date via a method call (they are not in array - yet)
