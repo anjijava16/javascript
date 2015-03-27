@@ -1,4 +1,4 @@
-supertest - chain request url
+supertest - ready to be used
 =============================
 
 ## Running / Development

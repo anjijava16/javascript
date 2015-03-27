@@ -1,4 +1,3 @@
-var request = require('supertest');
 var expect = require('chai').expect;
 var testHelper = require("./test-helper");
 
@@ -41,7 +40,6 @@ describe('supertest ', function () {
   it('PUT request - set headers with options', function (done) {
     var path = '/request';
     var options = {
-      //'content-length': '321',  // content-length does not work in POST
       'accept': '*/*'
     };
     var statusCode = 200;
@@ -57,7 +55,6 @@ describe('supertest ', function () {
   it('DELETE request - set headers with options', function (done) {
     var path = '/request';
     var options = {
-      //'content-length': '321',  // content-length does not work in POST
       'accept': '*/*'
     };
     var statusCode = 200;
