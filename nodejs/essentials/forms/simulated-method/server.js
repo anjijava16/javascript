@@ -19,8 +19,8 @@ app.get('/request', function(req, res){
 });
 
 app.post('/request', function(req, res){
-    console.log('PUT: ' + req.body.name);
-    res.send('PUT: ' + req.body.name);
+    console.log('POST: ' + req.body.name);
+    res.send('POST: ' + req.body.name);
 });
 
 app.listen(3000, function () {

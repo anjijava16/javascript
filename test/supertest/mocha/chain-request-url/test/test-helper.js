@@ -22,13 +22,14 @@ exports.ApiTest.namespace('Helper').SuperTest = (function(){
     }
     return requestChain;
   };
-  var get = function(url, path, validate, options){
+  var get = function(url, path, callback, options){
     var requestChain = request(url).get(path);
-    setHeaders(requestChain, options).end(validate)
+    setHeaders(requestChain, options).end(callback)
   };
-  var post = function(url, path, validate, options){
+  var post = function(url, path, body, callback, options){
+    console.log('#body', body);
     var requestChain = request(url).post(path);
-    setHeaders(requestChain, options).end(validate)
+    setHeaders(requestChain, options).send(body).end(callback)
   };
   return{
     get: get,
