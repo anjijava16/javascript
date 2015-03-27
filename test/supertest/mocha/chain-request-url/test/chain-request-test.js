@@ -39,6 +39,38 @@ describe('supertest ', function () {
       supTestHelper.post(url, path, {name: 'test-post'}, validate, options);
       //testHelper.get(url, path, validate);  // this one works too
     });
+    it('PUT request - set headers with options', function (done) {
+      var path = '/request';
+      var options = {
+        //'content-length': '321',  // content-length does not work in POST
+        'accept': '*/*'
+      };
+      var statusCode = 200;
+      var validate = function (err, res) {
+        console.log(res.body);  // show request headers because request headers is returned
+        expect(res.status).to.equal(statusCode);
+        done();
+      };
+
+      supTestHelper.put(url, path, {name: 'test-put'}, validate, options);
+      //testHelper.get(url, path, validate);  // this one works too
+    });
+    it('DELETE request - set headers with options', function (done) {
+      var path = '/request';
+      var options = {
+        //'content-length': '321',  // content-length does not work in POST
+        'accept': '*/*'
+      };
+      var statusCode = 200;
+      var validate = function (err, res) {
+        console.log(res.body);  // show request headers because request headers is returned
+        expect(res.status).to.equal(statusCode);
+        done();
+      };
+
+      supTestHelper.delete(url, path, {name: 'test-delete'}, validate, options);
+      //testHelper.get(url, path, validate);  // this one works too
+    });
     it('headers route', function (done) {
       var requestChain = request(url).get('/headers');
       requestChain.end(function (err, res) {

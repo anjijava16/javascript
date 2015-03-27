@@ -24,7 +24,7 @@ exports.ApiTest.namespace('Helper').SuperTest = (function(){
   };
 
   var writeRequest = function(action, url, path, body, callback, options){
-    console.log('#body', body);
+    console.log('#body:', body);
     var requestChain = request(url)[action](path);
     setHeaders(requestChain, options).send(body).end(callback)
   };
