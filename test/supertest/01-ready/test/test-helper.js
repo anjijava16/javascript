@@ -30,19 +30,17 @@ exports.ApiTest.namespace('Helper').SuperTest = (function(){
   };
 
   var ret = {};
+
   ret['get'] = function(url, path, callback, options){
     var requestChain = request(url).get(path);
     setHeaders(requestChain, options).end(callback)
   };
-  ret['post'] = function(url, path, body, callback, options){
-    writeRequest('post', url, path, body, callback, options);
-  };
-  ret['put'] = function(url, path, body, callback, options){
-    writeRequest('put', url, path, body, callback, options);
-  };
-  ret['delete'] = function(url, path, body, callback, options){
-    writeRequest('delete', url, path, body, callback, options);
-  };
+
+  ['post', 'put', 'delete'].forEach(function(action){
+    ret[action] = function(url, path, body, callback, options){
+      writeRequest(action, url, path, body, callback, options);
+    };
+  });
 
   return ret;
 }());
