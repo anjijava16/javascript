@@ -1,5 +1,5 @@
-merge exports files
-=====================
+exports-ref-file-exports
+========================
 
 **unitTest.js**
 

@@ -1,9 +1,7 @@
 var common = require('../common.js');
 
-var commonExportNames = Object.keys(common);
-for(var i = 0; i < commonExportNames.length; i++){
-  var exportName = commonExportNames[i];
-  exports[exportName] = common[exportName];
+for(var k in common){
+  exports[k] = common[k];
 }
 
 exports.integrationCommon1 = function(){
