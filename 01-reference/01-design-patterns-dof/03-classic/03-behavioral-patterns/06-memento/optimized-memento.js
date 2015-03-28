@@ -32,7 +32,6 @@ Patterns.namespace("Classic").Memento = (function () {
       this.memento = JSON.stringify(this);
     },
     dehydrate: function () {
-
       if (this.memento) {
         var m = JSON.parse(this.memento);
         for (var prop in m) this[prop] = m[prop];
