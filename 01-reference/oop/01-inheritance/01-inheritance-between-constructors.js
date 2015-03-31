@@ -23,14 +23,14 @@ Employee.prototype.describe = function(){
   return Person.prototype.describe.call(this) + '(' + this.title + ')';
 };
 
-var jane = new Employee('Jane', 'CTO');
+var employee = new Employee('Jane', 'CTO');
 console.dir(employee);
 /*
 employee = {
   name: 'Ken',
   aka: 'aka',
   print: [Function],
-  title: 'QA'
+  title: 'CTO'
 }
  */
 employee.print();

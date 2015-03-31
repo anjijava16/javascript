@@ -19,6 +19,7 @@ console.log(counter.count);  // 0
 console.log(count);  // NaN
 
 /*
+ #How to get a warning
  If method inc() is in strict mode, you get a warning.
  */
 counter.inc = function(){
@@ -34,6 +35,26 @@ catch(e){
   console.log(e);  // [TypeError: Cannot read property 'count' of undefined]
 }
 
-
+/*
+ #How to properly extract a method
+ */
 var func3 = counter.inc.bind(counter);
-console.logfunc3()
+func3();
+console.log(counter.count);  // 1
+
+function callIt(callback){
+  callback();
+}
+
+/*
+ #Callbacks and extracted methods
+ */
+try{
+  callIt(counter.inc);
+}
+catch(e){
+  console.log(e);  // [TypeError: Cannot read property 'count' of undefined]
+}
+
+callIt(counter.inc.bind(counter));
+console.log(counter.count);  // 2
