@@ -22,7 +22,6 @@ console.log(jane.describe);  // get property 'describe' - [Function]
  */
 console.log(jane.unknownProperty);  // undefined
 
-
 /*
   #Calling methods
   The dot operator is also used to call methods
