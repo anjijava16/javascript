@@ -1,3 +1,4 @@
+'use strict';
 var proto = Object.defineProperties({}, {
   protoEnumTrue: {value: 1, enumerable: true},
   protoEnumFalse: {value: 1, enumerable: false}

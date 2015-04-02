@@ -1,3 +1,4 @@
+'use strict';
 /*
  Attribute key	   Default value
  [[Value]]         undefined
@@ -73,7 +74,12 @@ console.log(Object.getOwnPropertyDescriptor(obj, 'foo'));
  */
 
 console.log(obj.foo);  // 123
-obj.foo = 'new value';
+try{
+ obj.foo = 'new value';
+}
+catch(e){
+ console.log(e);  // [TypeError: Cannot assign to read only property 'foo' of #<Object>]
+}
 console.log(obj.foo);  // 123 - it is not changed because foo property is readonly
 
 /*
@@ -86,7 +92,12 @@ var obj = Object.defineProperties({}, {
  bar: {value: 'abc', enumerable: true, writable: false}
 });
 console.log(obj.bar);  // abc
-obj.bar = 'new value';
+try{
+ obj.bar = 'new value';
+}
+catch(e){
+ console.log(e);  // [TypeError: Cannot assign to read only property 'bar' of #<Object>]
+}
 console.log(obj.bar);  // abc - it is not changed because bar property is readonly
 
 /*
@@ -103,8 +114,13 @@ var obj = Object.create(Object.prototype, {
  }
 });
 console.log(obj.bar);  // xyz
-obj.bar = 'new value';
+try{
+ obj.bar = 'new value';
+}
+catch(e){
+ console.log(e);  // [TypeError: Cannot assign to read only property 'bar' of #<Object>]
+}
 console.log(obj.bar);  // xyz - it is not changed because bar property is readonly
-obj.say();
+obj.say();  // hello
 obj.say = function(){console.log('changed function')};
-obj.say();
+obj.say();  // hello

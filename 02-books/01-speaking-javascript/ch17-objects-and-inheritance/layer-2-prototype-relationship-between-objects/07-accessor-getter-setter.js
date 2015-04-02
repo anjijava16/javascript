@@ -1,3 +1,4 @@
+'use strict';
 /*
  #Defining Accessors via an Object Literal
  */

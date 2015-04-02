@@ -1,5 +1,7 @@
+'use strict';
 // it is a deep copy
 function copyOwnPropertiesFrom(target, source){
+  // Object.getOwnPropertyNames(obj) returns the keys of all own properties of obj.
   Object.getOwnPropertyNames(source)  // Get an array with keys of all own properties of source
     .forEach(function(propKey){   // Iterate over those keys
       var desc = Object.getOwnPropertyDescriptor(source, propKey);  // retrieve a property descriptor
@@ -30,10 +32,24 @@ var person = {
     {name: "javascript"}
   ],
   say: function(){
-    console.log(this.name + ", " + this.scores + ", " + this.address.street + ", " + this.address.city + ", " + this.books);
+    var msg = 'name: ' + this.name;
+    msg += '\nscores: ' + this.scores;
+    msg += '\naddress.streee: ' + this.address.street;
+    msg += '\naddress.city: ' + this.address.city;
+    msg += '\nbooks: ' + this.books;
+    msg += '\nsalary: ' + this.salary;
+    console.log(msg);
   }
 };
 
 var employee = {salary: "$35,000"};
 copyOwnPropertiesFrom(employee, person);
 employee.say();
+/*
+ name: Karen
+ scores: 212,310,89
+ address.streee: 1 Main St
+ address.city: Baltimore
+ books: [object Object],[object Object]
+ salary: $35,000
+ */
