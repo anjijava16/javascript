@@ -3,10 +3,21 @@ var expect = require('chai').expect;
 var apiTest = require('../common/apiTest');
 var config = require('../config/config.json');
 
-apiTest.ApiTest.Request['url'] = config[process.env.NODE_ENV].url;
-apiTest.ApiTest.namespace("Sitecore").Web = (function () {
+var ApiTest = {
+  namespace: function (name) {
+    var parts = name.split('.');
+    var ns = this;
+    for (var i = 0, len = parts.length; i < len; i++) {
+      ns[parts[i]] = ns[parts[i]] || {};
+      ns = ns[parts[i]];
+    }
+    return ns;
+  }
+};
+
+ApiTest.namespace("Sitecore").Web = (function () {
   var test = function(name){
-    var url = apiTest.ApiTest.Request.url;
+    var url = config[process.env.NODE_ENV].url;
     var statusCode = 200;
     var testData = require('../testData/' + name + '.json');
     testData.variations.forEach(function (variation) {
@@ -23,7 +34,7 @@ apiTest.ApiTest.namespace("Sitecore").Web = (function () {
           done();
         };
 
-        apiTest.ApiTest.Request.get(url, path, validate);
+        apiTest.Request.get(url, path, validate);
       });
     });
   };
@@ -32,4 +43,4 @@ apiTest.ApiTest.namespace("Sitecore").Web = (function () {
   }
 }());
 
-exports['ApiTest'] = apiTest.ApiTest;
+exports['ApiTest'] = ApiTest;
