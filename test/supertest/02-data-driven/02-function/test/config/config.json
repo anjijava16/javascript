@@ -1,0 +1,11 @@
+{
+  "development": {
+    "url": "http://localhost:3000"
+  },
+  "test": {
+    "url": "http://api.test.myapp.com"
+  },
+  "production": {
+    "url": "http://api.myapp.com"
+  }
+}
