@@ -1,0 +1,17 @@
+{
+  "path": "/get-request",
+  "variations": [
+    {
+      "name": "test-1",
+      "queryString": "?q=JavaScript&l=CA&e=10",
+      "expected": [
+      ]
+    },
+    {
+      "name": "test-2",
+      "queryString": "?sc_lang=en&plid=1",
+      "expected": [
+      ]
+    }
+  ]
+}

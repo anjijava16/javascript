@@ -9,7 +9,7 @@ GET submissions - querystring
 
 ### 1. read form data
 
-> Launch server `node read-form-data.js`
+> Launch server `node 01-read-form-data.js`
 
 > Visit http://localhost:3000/search
 
@@ -29,7 +29,7 @@ Tom : web
 
 ### 2. read URL query parameters
 
-> Launch server `node read-url-query-parameters.js`
+> Launch server `node 02-read-url-query-parameters.js`
 
 > Visit http://localhost:3000/search-result?q=JavaScript&l=CA&e=10
 
@@ -52,7 +52,7 @@ Experience: 10
 
 ### 3. read form data multiple options
 
-> Launch server `node read-form-multi-options.js`
+> Launch server `node 03-read-form-multi-options.js`
 
 > Visit http://localhost:3000/multi
 

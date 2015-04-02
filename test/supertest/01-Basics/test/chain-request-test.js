@@ -5,8 +5,9 @@ var supTestHelper = testHelper.ApiTest.Helper.SuperTest;
 var url = "http://localhost:3000";
 
 describe('supertest ', function () {
-  it('GET request - set headers with options', function (done) {
-    var path = '/headers';
+  it('GET request with queryString - set headers with options', function (done) {
+    var path = '/get-request';
+    var queryString = '?q=JavaScript&l=CA&e=10';
     var options = {
       'content-length': '123',
       'accept': '*/*'
@@ -18,11 +19,11 @@ describe('supertest ', function () {
       done();
     };
 
-    supTestHelper.get(url, path, validate, options);
-    //testHelper.get(url, path, validate);  // this one works too
+    supTestHelper.get(url, path + queryString, validate, options);
+    //supTestHelper.get(url, path, validate);  // this one works too
   });
   it('POST request - set headers with options', function (done) {
-    var path = '/request';
+    var path = '/post-request';
     var options = {
       //'content-length': '321',  // content-length does not work in POST
       'accept': '*/*'
@@ -35,10 +36,9 @@ describe('supertest ', function () {
     };
 
     supTestHelper.post(url, path, {name: 'test-post'}, validate, options);
-    //testHelper.get(url, path, validate);  // this one works too
   });
   it('PUT request - set headers with options', function (done) {
-    var path = '/request';
+    var path = '/put-request';
     var options = {
       'accept': '*/*'
     };
@@ -50,10 +50,9 @@ describe('supertest ', function () {
     };
 
     supTestHelper.put(url, path, {name: 'test-put'}, validate, options);
-    //testHelper.get(url, path, validate);  // this one works too
   });
   it('DELETE request - set headers with options', function (done) {
-    var path = '/request';
+    var path = '/delete-request';
     var options = {
       'accept': '*/*'
     };
@@ -65,6 +64,5 @@ describe('supertest ', function () {
     };
 
     supTestHelper.delete(url, path, {name: 'test-delete'}, validate, options);
-    //testHelper.get(url, path, validate);  // this one works too
   });
 });

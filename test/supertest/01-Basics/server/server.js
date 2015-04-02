@@ -6,18 +6,28 @@ var bodyParser = require('body-parser');
 // parse application/json
 app.use(bodyParser.json());
 
-app.get('/headers', function (req, res) {
-  res.status(200).send(req.headers);
+app.get('/get-request', function (req, res) {
+  var q = req.query.q;
+  var l = req.query.l;
+  var e = req.query.e;
+  console.log('Query: ' + q);
+  console.log('Location: ' + l);
+  console.log('Experience: ' + e);
+  var responseContent = {};
+  responseContent.query = req.query;
+  responseContent.headers = req.headers;
+  console.log(responseContent);
+  res.status(200).send(responseContent);
 });
-app.post('/request', function(req, res){
+app.post('/post-request', function(req, res){
   console.log('POST: ' + req.body.name);
   res.send('POST: ' + req.body.name);
 });
-app.put('/request', function(req, res){
+app.put('/put-request', function(req, res){
   console.log('PUT: ' + req.body.name);
   res.send('PUT: ' + req.body.name);
 });
-app.delete('/request', function(req, res){
+app.delete('/delete-request', function(req, res){
   console.log('DELETE: ' + req.body.name);
   res.send('DELETE: ' + req.body.name);
 });
