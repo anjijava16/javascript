@@ -1,22 +1,7 @@
 'use strict';
 var request = require('supertest');
 
-var ApiTest = Object.create(Object.prototype, {
-  namespace: {
-    value: function (name) {
-      var parts = name.split('.');
-      var ns = this;
-      for (var i = 0, len = parts.length; i < len; i++) {
-        ns[parts[i]] = ns[parts[i]] || {};
-        ns = ns[parts[i]];
-      }
-      return ns;
-    },
-    writable: false
-  }
-});
-
-ApiTest.SuperTestProto = Object.create(Object.prototype, (function(){
+var supTestProto = Object.create(Object.prototype, (function(){
   var writeMethods = ['post', 'put', 'patch', 'delete'];
   var propertyDescriptor = {
     setHeaders: {
@@ -56,18 +41,12 @@ ApiTest.SuperTestProto = Object.create(Object.prototype, (function(){
   return propertyDescriptor;
 }()));
 
-ApiTest.SuperTest = (function () {
-  var Request = function(url){
-    this.url = url;
-    console.log('Request');
-    console.log(this);
-  };
+var Request = function(url){
+  this.url = url;
+  console.log('Request');
+  console.log(this);
+};
 
-  Request.prototype = ApiTest.SuperTestProto;
+Request.prototype = supTestProto;
 
-  return {
-    Request : Request
-  };
-}());
-
-exports.ApiTest = ApiTest;
+exports.Request = Request;

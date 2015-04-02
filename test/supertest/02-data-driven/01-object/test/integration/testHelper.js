@@ -1,9 +1,24 @@
 'use strict';
 var expect = require('chai').expect;
-var apiTest = require('../common/apiTest').ApiTest;
+var apiTest = require('../common/apiTest');
 var config = require('../config/config.json');
 
-apiTest.namespace("Sitecore").Web = (function () {
+var ApiTest = Object.create(Object.prototype, {
+  namespace: {
+    value: function (name) {
+      var parts = name.split('.');
+      var ns = this;
+      for (var i = 0, len = parts.length; i < len; i++) {
+        ns[parts[i]] = ns[parts[i]] || {};
+        ns = ns[parts[i]];
+      }
+      return ns;
+    },
+    writable: false
+  }
+});
+
+ApiTest.namespace("Sitecore").Web = (function () {
   var test = function(name){
     var url = config[process.env.NODE_ENV].url;
     var statusCode = 200;
@@ -22,8 +37,7 @@ apiTest.namespace("Sitecore").Web = (function () {
           done();
         };
 
-        var Request = apiTest.SuperTest.Request;
-        new Request(url).get(path, validate);
+        new apiTest.Request(url).get(path, validate);
       });
     });
   };
@@ -32,4 +46,4 @@ apiTest.namespace("Sitecore").Web = (function () {
   }
 }());
 
-exports['ApiTest'] = apiTest;
+exports['ApiTest'] = ApiTest;
