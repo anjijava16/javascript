@@ -1,3 +1,4 @@
+'use strict';
 // By default, each function C contains an instance prototype object C.prototype whose property constructor point
 function C(){
 }

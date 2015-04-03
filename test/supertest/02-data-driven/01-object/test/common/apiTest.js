@@ -1,7 +1,7 @@
 'use strict';
-var request = require('supertest');
+var supTest = require('supertest');
 
-var supTestProto = Object.create(Object.prototype, (function(){
+var requestProto = Object.create(Object.prototype, (function(){
   var writeMethods = ['post', 'put', 'patch', 'delete'];
   var propertyDescriptor = {
     setHeaders: {
@@ -16,14 +16,14 @@ var supTestProto = Object.create(Object.prototype, (function(){
     },
     writeRequest: {
       value: function (action, path, body, callback, options) {
-        var requestChain = request(this.url)[action](path);
+        var requestChain = supTest(this.url)[action](path);
         this.setHeaders(requestChain, options).send(body).end(callback.bind(this));
       },
       writable: false
     },
     get: {
       value: function (path, callback, options) {
-        var requestChain = request(this.url).get(path);
+        var requestChain = supTest(this.url).get(path);
         // use bind() to workaround function inside method shadow this
         this.setHeaders(requestChain, options).end(callback.bind(this));
       },
@@ -42,6 +42,7 @@ var Request = function(url){
   this.url = url;
 };
 
-Request.prototype = supTestProto;
+Request.prototype = requestProto;
+Request.prototype.constructor = Request;
 
 exports.Request = Request;
