@@ -7,3 +7,19 @@
  */
 console.log(Math.max(17, 33, 2));  // 33
 console.log(Math.max.apply(null, [17, 33, 2]));  // 33
+
+// function without return
+function print(msg){
+ console.log(msg);
+}
+
+var result = print.apply(print, ['Hello']);  // Hello
+console.log(result);  // undefined - because no return
+
+// function has return
+function getPerson(name){
+ return 'found ' + name;
+}
+
+var result = getPerson.apply(getPerson, ['Tom']);
+console.log(result);  // found Tom - because function has return value
