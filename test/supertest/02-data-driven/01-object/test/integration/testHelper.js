@@ -19,25 +19,22 @@ var ApiTest = Object.create(Object.prototype, {
 });
 
 ApiTest.namespace("Sitecore").Web = (function () {
-  var test = function(name){
+  var test = function (namePath) {
     var url = config[process.env.NODE_ENV].url;
     var statusCode = 200;
-    var testData = require('../testData/' + name + '.json');
+    var testData = require(namePath);
     testData.variations.forEach(function (variation) {
       it(variation.name, function (done) {
         var path = testData.path + variation.queryString;
-        var validate = function (error, response) {
+        new apiTest.Request(url).get(path, function (error, response) {
           expect(response.status).to.equal(statusCode);
           variation.expected.forEach(function (item) {
             var regexp = new RegExp(item, "gi");
             var result = response.text.match(regexp);
-            console.log('#response.text.match()', result);
             expect(result.length).gt(0);
           });
           done();
-        };
-
-        new apiTest.Request(url).get(path, validate);
+        });
       });
     });
   };

@@ -1,11 +1,16 @@
 'use strict';
 var expect = require('chai').expect;
 var testHelper = require('../testHelper');
-
-var web = testHelper.ApiTest.Sitecore.Web;
+var fs = require('fs');
 
 describe('Smoke', function () {
-  describe('getTest1', function () {
-    web.test('getTest1');
+  describe('Module', function(){
+    var web = testHelper.ApiTest.Sitecore.Web;
+    var testDataPath = './test/testData';
+    var testNames = fs.readdirSync(testDataPath);
+    testNames.forEach(function(testName){
+      var testNamePath = '../testData/' + testName;
+      web.test(testNamePath);
+    });
   });
 });

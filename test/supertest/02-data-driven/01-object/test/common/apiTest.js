@@ -6,7 +6,6 @@ var supTestProto = Object.create(Object.prototype, (function(){
   var propertyDescriptor = {
     setHeaders: {
       value: function (requestChain, options) {
-        console.log('#setHeaders');
         for (var key in options) {
           var value = options[key];
           requestChain.set(key, value);
@@ -17,8 +16,6 @@ var supTestProto = Object.create(Object.prototype, (function(){
     },
     writeRequest: {
       value: function (action, path, body, callback, options) {
-        console.log('writeRequest');
-        console.log(this);
         var requestChain = request(this.url)[action](path);
         this.setHeaders(requestChain, options).send(body).end(callback.bind(this));
       },
@@ -43,8 +40,6 @@ var supTestProto = Object.create(Object.prototype, (function(){
 
 var Request = function(url){
   this.url = url;
-  console.log('Request');
-  console.log(this);
 };
 
 Request.prototype = supTestProto;
