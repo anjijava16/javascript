@@ -1,5 +1,6 @@
 /*
  #Creating a new object with a given prototype
+ Note: use chrome to view the object tree
  */
 var PersonProto = {
   describe: function(){

@@ -37,8 +37,10 @@ console.log(obj.foo);  // getter
  #Accessors and Inheritance
  Getters and setters are inherited from prototype
  */
-var proto = {get foo(){
-  return 'hello';
-}};
+var proto = {
+  get foo(){
+    return 'hello';
+  }
+};
 var obj = Object.create(proto);
 console.log(obj.foo);  // hello

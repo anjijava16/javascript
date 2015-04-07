@@ -1,3 +1,4 @@
+'use strict';
 /*
  #Attaching private global data to a singleton object
  You don’t need a constructor to associate an object with private data in an environment.

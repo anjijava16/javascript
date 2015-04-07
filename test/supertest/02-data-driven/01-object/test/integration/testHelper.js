@@ -1,6 +1,6 @@
 'use strict';
 var expect = require('chai').expect;
-var apiTest = require('../common/apiTest');
+var Request = require('../common/apiTest').Request;
 var config = require('../config/config.json');
 
 var ApiTest = Object.create(Object.prototype, {
@@ -21,13 +21,12 @@ var ApiTest = Object.create(Object.prototype, {
 ApiTest.namespace("Sitecore").Web = (function () {
   var test = function (namePath) {
     var url = config[process.env.NODE_ENV].url;
-    var statusCode = 200;
     var testData = require(namePath);
     testData.variations.forEach(function (variation) {
       it(variation.name, function (done) {
         var path = testData.path + variation.queryString;
-        new apiTest.Request(url).get(path, function (error, response) {
-          expect(response.status).to.equal(statusCode);
+        new Request(url).get(path, function (error, response) {
+          expect(response.status).to.equal(200);
           variation.expected.forEach(function (item) {
             var regexp = new RegExp(item, "gi");
             var result = response.text.match(regexp);

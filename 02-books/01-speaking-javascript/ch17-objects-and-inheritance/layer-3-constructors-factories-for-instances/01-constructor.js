@@ -1,3 +1,4 @@
+'use strict';
 /*
  #Two objects that are similar
  var PersonProto = {

@@ -1,3 +1,4 @@
+'use strict';
 /*
  #Avoid Prototype Properties with Initial Values for Instance Properties
  Prototypes contain properties that are shared by several objects. Hence, they work well for methods.

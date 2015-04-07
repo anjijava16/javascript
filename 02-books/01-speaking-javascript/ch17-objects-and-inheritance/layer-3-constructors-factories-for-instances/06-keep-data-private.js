@@ -1,3 +1,4 @@
+'use strict';
 /*
  #Private Data in the Environment of a Constructor (Crockford Privacy Pattern)
  When a constructor is invoked, two things are created: the constructor’s instance and an environment.
