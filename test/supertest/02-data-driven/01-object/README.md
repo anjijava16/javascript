@@ -9,6 +9,10 @@
 
 > `node server.js`
 
-### Run Test
+### Run Integration (SuperTest) Test
 
 > `NODE_ENV=development npm test`
+
+### Run Stress Test
+
+> `NODE_ENV=development npm run test_stress`
