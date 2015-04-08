@@ -15,14 +15,16 @@ var Request = (function(){
     setHeaders(requestChain, options).send(body).end(callback)
   };
 
-  var ret = {};
+  var writeMethods = ['post', 'put', 'patch', 'delete'];
 
-  ret['get'] = function(url, path, callback, options){
-    var requestChain = supTest(url).get(path);
-    setHeaders(requestChain, options).end(callback)
+  var ret = {
+    get: function(url, path, callback, options){
+      var requestChain = supTest(url).get(path);
+      setHeaders(requestChain, options).end(callback);
+    }
   };
 
-  ['post', 'put', 'patch', 'delete'].forEach(function(action){
+  writeMethods.forEach(function(action){
     ret[action] = function(url, path, body, callback, options){
       writeRequest(action, url, path, body, callback, options);
     };

@@ -113,6 +113,7 @@ var obj = Object.create(Object.prototype, {
   writable: false
  }
 });
+console.log(obj);  // { foo: 123, bar: 'xyz' }
 console.log(obj.bar);  // xyz
 try{
  obj.bar = 'new value';

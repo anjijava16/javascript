@@ -1,7 +1,7 @@
 'use strict';
 var supTest = require('supertest');
 
-var requestProto = Object.create(Object.prototype, (function(){
+var requestProto = (function(){
   function setHeaders(requestChain, options){
     for (var key in options) {
       var value = options[key];
@@ -15,13 +15,10 @@ var requestProto = Object.create(Object.prototype, (function(){
   }
   var writeMethods = ['post', 'put', 'patch', 'delete'];
   var proto = {
-    get: {
-      value: function (path, callback, options) {
-        var requestChain = supTest(this.url).get(path);
-        // use bind() to workaround function inside method shadow this
-        setHeaders(requestChain, options).end(callback.bind(this));
-      },
-      writable: false
+    get: function (path, callback, options) {
+      var requestChain = supTest(this.url).get(path);
+      // use bind() to workaround function inside method shadow this
+      setHeaders(requestChain, options).end(callback.bind(this));
     }
   };
   writeMethods.forEach(function(action){
@@ -30,7 +27,7 @@ var requestProto = Object.create(Object.prototype, (function(){
     };
   });
   return proto;
-}()));
+}());
 
 /**
  * Represents a SuperTest request

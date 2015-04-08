@@ -19,7 +19,7 @@ ApiTest.namespace("Sitecore").Web = (function () {
   var test = function(name){
     var url = config[process.env.NODE_ENV].url;
     var statusCode = 200;
-    var testData = require('../testData/' + name + '.json');
+    var testData = require(name);
     testData.variations.forEach(function (variation) {
       it(variation.name, function (done) {
         var path = testData.path + variation.queryString;
