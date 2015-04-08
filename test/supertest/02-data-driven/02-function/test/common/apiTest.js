@@ -19,6 +19,9 @@ var Request = (function(){
 
   var ret = {
     get: function(url, path, callback, options){
+      if (typeof callback !== "function") {
+        throw new TypeError(callback + ' is not a function');
+      }
       var requestChain = supTest(url).get(path);
       setHeaders(requestChain, options).end(callback);
     }
@@ -26,6 +29,9 @@ var Request = (function(){
 
   writeMethods.forEach(function(action){
     ret[action] = function(url, path, body, callback, options){
+      if (typeof callback !== "function") {
+        throw new TypeError(callback + ' is not a function');
+      }
       writeRequest(action, url, path, body, callback, options);
     };
   });

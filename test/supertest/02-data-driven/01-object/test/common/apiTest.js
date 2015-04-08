@@ -16,6 +16,9 @@ var requestProto = (function(){
   var writeMethods = ['post', 'put', 'patch', 'delete'];
   var proto = {
     get: function (path, callback, options) {
+      if (typeof callback !== "function") {
+        throw new TypeError(callback + ' is not a function');
+      }
       var requestChain = supTest(this.url).get(path);
       // use bind() to workaround function inside method shadow this
       setHeaders(requestChain, options).end(callback.bind(this));
@@ -23,6 +26,9 @@ var requestProto = (function(){
   };
   writeMethods.forEach(function(action){
     proto[action] = function (path, body, callback, options) {
+      if (typeof callback !== "function") {
+        throw new TypeError(callback + ' is not a function');
+      }
       writeRequest(action, path, body, callback, options);
     };
   });
