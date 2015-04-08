@@ -109,7 +109,7 @@ var obj = Object.create(Object.prototype, {
  foo: {value: 123, enumerable: true},
  bar: {value: 'xyz', enumerable: true, writable: false},
  say: {
-  value: function(){console.log('hello')},
+  value: function(){console.log('hello ' + this.bar)},
   writable: false
  }
 });
@@ -121,6 +121,11 @@ catch(e){
  console.log(e);  // [TypeError: Cannot assign to read only property 'bar' of #<Object>]
 }
 console.log(obj.bar);  // xyz - it is not changed because bar property is readonly
-obj.say();  // hello
-obj.say = function(){console.log('changed function')};
+obj.say();  // hello xyz
+try{
+ obj.say = function(){console.log('changed function')};
+}
+catch(e){
+ console.log(e);  // [TypeError: Cannot assign to read only property 'say' of #<Object>]
+}
 obj.say();  // hello

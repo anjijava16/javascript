@@ -18,27 +18,46 @@ var ApiTest = Object.create(Object.prototype, {
   }
 });
 
-ApiTest.namespace("Sitecore").Web = (function () {
-  var test = function (namePath) {
+ApiTest.namespace("GDSitecore").Web = (function () {
+  var requestProto = Object.create(Object.prototype, (function(){
     var url = config[process.env.NODE_ENV].url;
-    var testData = require(namePath);
-    testData.variations.forEach(function (variation) {
-      it(variation.name, function (done) {
-        var path = testData.path + variation.queryString;
-        new Request(url).get(path, function (error, response) {
-          expect(response.status).to.equal(200);
-          variation.expected.forEach(function (item) {
-            var regexp = new RegExp(item, "gi");
-            var result = response.text.match(regexp);
-            expect(result.length).gt(0);
+    var proto = {
+      test: {
+        value: function () {
+          var testData = require(this.path);
+          testData.variations.forEach(function (variation) {
+            it(variation.name, function (done) {
+              var path = testData.path + variation.queryString;
+              new Request(url).get(path, function (error, response) {
+                expect(response.status).to.equal(200);
+                variation.expected.forEach(function (item) {
+                  var regexp = new RegExp(item, "gi");
+                  var result = response.text.match(regexp);
+                  expect(result.length).gt(0);
+                });
+                done();
+              });
+            });
           });
-          done();
-        });
-      });
-    });
+        },
+        writable: false
+      }
+    };
+    return proto;
+  }()));
+
+  /**
+   * Represents a Http request data-driven test.
+   * @param {string} path - test data path
+   */
+  var RequestTest = function(path){
+    this.path = path;
   };
+  RequestTest.prototype = requestProto;
+  RequestTest.prototype.constructor = RequestTest;
+
   return {
-    test: test
+    RequestTest: RequestTest
   }
 }());
 

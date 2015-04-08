@@ -32,6 +32,10 @@ var requestProto = Object.create(Object.prototype, (function(){
   return proto;
 }()));
 
+/**
+ * Represents a SuperTest request
+ * @param {string} url
+ */
 var Request = function(url){
   this.url = url;
 };
