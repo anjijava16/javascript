@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 var testHelper = require('../testHelper');
 var fs = require('fs');
 
-var web = testHelper.ApiTest.Sitecore.Web;
+var web = testHelper.ApiTest.GDSitecore.Web;
 
 describe('Smoke', function () {
   describe('Module', function () {

@@ -1,12 +1,36 @@
 'use strict';
 var supTest = require('supertest');
 
-var Request = (function(){
-  var setHeaders = function(requestChain, options){
-    for (var key in options) {
-      var value = options[key];
-      requestChain.set(key, value);
+var ApiTest = {
+  namespace: function (name) {
+    var parts = name.split('.');
+    var ns = this;
+    for (var i = 0, len = parts.length; i < len; i++) {
+      ns[parts[i]] = ns[parts[i]] || {};
+      ns = ns[parts[i]];
     }
+    return ns;
+  }
+};
+
+ApiTest.namespace("Utils").Common = (function(){
+  var getOwnProperty = function(obj, propKey){
+    return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
+  };
+
+  return {
+    getOwnProperty: getOwnProperty
+  }
+}());
+
+ApiTest.Request = (function(){
+  var utils = ApiTest.Utils.Common;
+  var setHeaders = function(requestChain, options){
+    options = options || {};
+    Object.keys(options).forEach(function(key){
+      var value = utils.getOwnProperty(options, key);
+      requestChain.set(key, value);
+    });
     return requestChain;
   };
 
@@ -39,4 +63,4 @@ var Request = (function(){
   return ret;
 }());
 
-exports.Request = Request;
+exports['ApiTest'] = ApiTest;
