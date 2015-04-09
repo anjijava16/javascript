@@ -1,12 +1,35 @@
 'use strict';
 var supTest = require('supertest');
 
+var ApiTest = {
+  namespace: function (name) {
+    var parts = name.split('.');
+    var ns = this;
+    for (var i = 0, len = parts.length; i < len; i++) {
+      ns[parts[i]] = ns[parts[i]] || {};
+      ns = ns[parts[i]];
+    }
+    return ns;
+  }
+};
+
+ApiTest.namespace("Utils").Common = (function(){
+  var getOwnProperty = function(obj, propKey){
+    return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
+  };
+
+  return {
+    getOwnProperty: getOwnProperty
+  }
+}());
+
 var requestProto = (function(){
   function setHeaders(requestChain, options){
-    for (var key in options) {
-      var value = options[key];
+    options = options || {};
+    Object.keys(options).forEach(function(key){
+      var value = utils.getOwnProperty(options, key);
       requestChain.set(key, value);
-    }
+    });
     return requestChain;
   }
   function writeRequest(action, path, body, callback, options){
@@ -39,11 +62,11 @@ var requestProto = (function(){
  * Represents a SuperTest request
  * @param {string} url
  */
-var Request = function(url){
+ApiTest.Request = function(url){
   this.url = url;
 };
 
-Request.prototype = requestProto;
-Request.prototype.constructor = Request;
+ApiTest.Request.prototype = requestProto;
+ApiTest.Request.prototype.constructor = ApiTest.Request;
 
-exports.Request = Request;
+exports['ApiTest'] = ApiTest;
