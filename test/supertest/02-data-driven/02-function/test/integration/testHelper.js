@@ -4,15 +4,15 @@ var ApiTest = require('../common/apiTest').ApiTest;
 var config = require('../config/config.json');
 
 ApiTest.namespace("GDSitecore").Web = (function () {
-  var test = function(path){
+  var test = function (path) {
     var url = config[process.env.NODE_ENV].url;
-    var statusCode = 200;
+    var expectedStatus = 200;
     var testData = require(path);
     testData.variations.forEach(function (variation) {
       it(variation.name, function (done) {
         var path = testData.path + variation.queryString;
         var validate = function (error, response) {
-          expect(response.status).to.equal(statusCode);
+          expect(response.status).to.equal(expectedStatus);
           variation.expected.forEach(function (item) {
             var regexp = new RegExp(item, "gi");
             var result = response.text.match(regexp);

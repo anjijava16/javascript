@@ -19,15 +19,15 @@ app.get('/get-request', function (req, res) {
   console.log(responseContent);
   res.status(200).send(responseContent);
 });
-app.post('/post-request', function(req, res){
+app.post('/post-request', function (req, res) {
   console.log('POST: ' + req.body.name);
   res.send('POST: ' + req.body.name);
 });
-app.put('/put-request', function(req, res){
+app.put('/put-request', function (req, res) {
   console.log('PUT: ' + req.body.name);
   res.send('PUT: ' + req.body.name);
 });
-app.delete('/delete-request', function(req, res){
+app.delete('/delete-request', function (req, res) {
   console.log('DELETE: ' + req.body.name);
   res.send('DELETE: ' + req.body.name);
 });

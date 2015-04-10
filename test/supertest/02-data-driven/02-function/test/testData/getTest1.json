@@ -2,15 +2,17 @@
   "path": "/get-request",
   "variations": [
     {
-      "name": "test-1",
-      "queryString": "?q=JavaScript&l=CA&e=10",
+      "name": "test1-1",
+      "queryString": "?q=Ruby&l=LA&e=100",
       "expected": [
+        "Ruby"
       ]
     },
     {
-      "name": "test-2",
-      "queryString": "?sc_lang=en&plid=1",
+      "name": "test1-2",
+      "queryString": "?q=WPF&l=NY&e=101",
       "expected": [
+        "WPF"
       ]
     }
   ]
