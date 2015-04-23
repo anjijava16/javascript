@@ -32,3 +32,11 @@ var arr = [];
 arr[0] = 'a';
 arr[2] = 'b';
 console.log(arr);  // [ 'a', , 'b' ]
+
+/*
+ #Arrays Can Also Have Properties
+ */
+var arr = ['a', 'b'];
+arr.foo = 123;
+console.log(arr);
+console.log(arr.foo);
