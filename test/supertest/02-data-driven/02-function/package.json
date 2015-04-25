@@ -4,12 +4,13 @@
   "devDependencies": {
     "body-parser": "^1.12.2",
     "chai": "^2.1.2",
-    "express": "^4.10.6",
     "loadtest": "^1.2.10",
+    "mocha": "^2.2.4",
     "supertest": "^0.15.0"
   },
   "scripts": {
     "pretest": "npm install",
-    "test": "node_modules/.bin/mocha --recursive --reporter spec --timeout 30000 test"
+    "test": "node_modules/.bin/mocha --recursive --reporter spec --timeout 30000 test",
+    "test_smoke": "node_modules/.bin/mocha --recursive --reporter spec --timeout 30000 test/integration/smoke"
   }
 }
