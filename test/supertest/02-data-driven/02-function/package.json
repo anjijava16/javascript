@@ -4,6 +4,7 @@
   "devDependencies": {
     "body-parser": "^1.12.2",
     "chai": "^2.1.2",
+    "express": "^4.12.3",
     "loadtest": "^1.2.10",
     "mocha": "^2.2.4",
     "supertest": "^0.15.0"
