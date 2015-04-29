@@ -7,7 +7,7 @@ The test code sample navigates to google.com, performs actions and validations
 
 ### Install Nightwatch
 
-$ npm install -g nightwatch
+> `npm install -g nightwatch`
 
 ### Running the Selenium Server
 
@@ -19,12 +19,16 @@ download the latest selenium-server-standalone-2.43.1.jar
 
 Running Selenium Manually on the where you download the selenium-server-standalone-2.43.1.jar
 
-$ java -jar selenium-server-standalone-2.43.1.jar
+> `java -jar selenium-server-standalone-2.43.1.jar`
 
 ### Run Test
 
-$ nightwatch -t tests/demotest.js
+> `nightwatch -t tests/demotest.js`
 
 ### Reference
 
 > http://nightwatchjs.org/api#assertions
+
+### Run Page Objects Test - GooglePage.js is a page object
+
+> `nightwatch -t tests/GooglePageTest.js`
