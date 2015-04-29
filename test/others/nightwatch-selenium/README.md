@@ -31,6 +31,8 @@ Running Selenium Manually on the where you download the selenium-server-standalo
 
 ### Run Page Objects Test - GooglePage.js is a page object
 
+> http://nightwatchjs.org/guide#usage
+
 > note: in nightwatch.json, set `"page_objects_path" : "tests/pageObject"`
 
 > `nightwatch -t tests/pageObjectTest/GooglePageTest.js`
