@@ -9,17 +9,21 @@ The test code sample navigates to google.com, performs actions and validations
 
 > `npm install -g nightwatch`
 
+### Download chrome driver
+
+> http://chromedriver.storage.googleapis.com/index.html
+
 ### Running the Selenium Server
 
 download the latest selenium-server-standalone from http://selenium-release.storage.googleapis.com/index.html
 
-By the time it is written (2/23/2015), I did following
+By the time it is written (5/5/2015), I did following
 
-download the latest selenium-server-standalone-2.43.1.jar
+download the latest selenium-server-standalone-2.45.0.jar
 
-Running Selenium Manually on the where you download the selenium-server-standalone-2.43.1.jar
+Running Selenium Manually on the where you download the selenium-server-standalone-2.45.0.jar
 
-> `java -jar selenium-server-standalone-2.43.1.jar`
+> `java -jar selenium-server-standalone-2.45.0.jar`
 
 ### Run Test
 

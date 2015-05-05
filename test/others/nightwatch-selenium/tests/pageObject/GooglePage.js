@@ -8,4 +8,7 @@ module.exports = function (browser) {
 
     return browser;
   };
+  this.action2 = function(){
+    console.log('Google page object action_2');
+  }
 };
