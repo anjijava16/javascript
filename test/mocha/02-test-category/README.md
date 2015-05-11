@@ -1,5 +1,5 @@
-npm mocha assert
-================
+test-category
+=============
 
 For more examples, checkout http://mochajs.org/#getting-started
 
@@ -11,12 +11,11 @@ For more examples, checkout http://mochajs.org/#getting-started
 
 > `npm test`
 
-> `npm run test_multiple_folders`  <- run tests on multiple folders
+> `npm test -- --grep '@smoke'`  <- grep pattern to run smoke tests
 
-> `npm run test_find`
+> `npm test -- --grep '@button.*@smoke'`  <- grep pattern to run button smoke tests
 
-> `npm run test_smoke -- --grep 'tlds'`  <- pass parameter to run only tlds smoke tests
-
+> http://www.thegeekstuff.com/2011/10/grep-or-and-not-operators/
 
 ```
 by default, 'mocha --recursive' will run all tests under test folder 
