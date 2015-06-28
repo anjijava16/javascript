@@ -4,16 +4,12 @@
     {
       "name": "test1-1",
       "queryString": "?q=Ruby&l=LA&e=100",
-      "expected": [
-        "Ruby"
-      ]
+      "expectedValue": "Ruby"
     },
     {
       "name": "test1-2",
       "queryString": "?q=WPF&l=NY&e=101",
-      "expected": [
-        "WPF"
-      ]
+      "expectedValue": "WPF"
     }
   ]
 }

@@ -5,7 +5,7 @@ var getOwnProperty = function(obj, propKey){
   return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
 };
 
-var HttpClient = (function(){
+var HttpRequest = (function(){
   var setHeaders = function(requestChain, options){
     options = options || {};
     Object.keys(options).forEach(function(key){
@@ -44,4 +44,4 @@ var HttpClient = (function(){
   return ret;
 }());
 
-exports['HttpClient'] = HttpClient;
+exports['HttpRequest'] = HttpRequest;
