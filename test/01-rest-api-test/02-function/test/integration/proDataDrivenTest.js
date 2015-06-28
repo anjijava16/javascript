@@ -1,9 +1,7 @@
 'use strict';
 var expect = require('chai').expect;
-var dataDrivenHelper = require('../helper/dataDrivenHelper');
+var testHelper = require('../helper/testHelper');
 var fs = require('fs');
-
-var dataDrivenHelper = dataDrivenHelper.HttpClient.GDSitecore.dataDriven;
 
 describe('Smoke Data-Driven Test', function () {
   describe('Module', function () {
@@ -12,7 +10,7 @@ describe('Smoke Data-Driven Test', function () {
     testNames.forEach(function(testName){
       var testNamePath = '../testData/' + testName;
 
-      dataDrivenHelper.test(testNamePath);
+      testHelper.dataDriven(testNamePath);
     });
   });
 });

@@ -1,7 +1,7 @@
 'use strict';
 var supTest = require('supertest');
 
-var HttpClient = {
+var Company = {
   namespace: function (name) {
     var parts = name.split('.');
     var ns = this;
@@ -13,7 +13,7 @@ var HttpClient = {
   }
 };
 
-HttpClient.namespace("Utils").Common = (function(){
+Company.namespace("Utils").Common = (function(){
   var getOwnProperty = function(obj, propKey){
     return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
   };
@@ -23,8 +23,8 @@ HttpClient.namespace("Utils").Common = (function(){
   }
 }());
 
-HttpClient.Request = (function(){
-  var utils = HttpClient.Utils.Common;
+Company.HttpClient = (function(){
+  var utils = Company.Utils.Common;
   var setHeaders = function(requestChain, options){
     options = options || {};
     Object.keys(options).forEach(function(key){
@@ -63,4 +63,4 @@ HttpClient.Request = (function(){
   return ret;
 }());
 
-exports['HttpClient'] = HttpClient;
+exports['HttpClient'] = Company.HttpClient;
