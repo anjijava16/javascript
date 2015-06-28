@@ -1,34 +1,15 @@
 'use strict';
 var supTest = require('supertest');
 
-var Company = {
-  namespace: function (name) {
-    var parts = name.split('.');
-    var ns = this;
-    for (var i = 0, len = parts.length; i < len; i++) {
-      ns[parts[i]] = ns[parts[i]] || {};
-      ns = ns[parts[i]];
-    }
-    return ns;
-  }
+var getOwnProperty = function(obj, propKey){
+  return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
 };
 
-Company.namespace("Utils").Common = (function(){
-  var getOwnProperty = function(obj, propKey){
-    return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
-  };
-
-  return {
-    getOwnProperty: getOwnProperty
-  }
-}());
-
-Company.HttpClient = (function(){
-  var utils = Company.Utils.Common;
+var HttpClient = (function(){
   var setHeaders = function(requestChain, options){
     options = options || {};
     Object.keys(options).forEach(function(key){
-      var value = utils.getOwnProperty(options, key);
+      var value = getOwnProperty(options, key);
       requestChain.set(key, value);
     });
     return requestChain;
@@ -63,4 +44,4 @@ Company.HttpClient = (function(){
   return ret;
 }());
 
-exports['HttpClient'] = Company.HttpClient;
+exports['HttpClient'] = HttpClient;

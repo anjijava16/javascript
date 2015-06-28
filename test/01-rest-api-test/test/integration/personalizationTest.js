@@ -1,5 +1,5 @@
 'use strict';
-var testHelper = require('../helper/testHelper');
+var testHelper = require('../testHelper');
 var getRequest = testHelper.getRequest;
 
 describe('Personalization', function () {
