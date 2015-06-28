@@ -1,7 +1,7 @@
 'use strict';
 var supTest = require('supertest');
 
-var ApiTest = {
+var HttpClient = {
   namespace: function (name) {
     var parts = name.split('.');
     var ns = this;
@@ -13,7 +13,7 @@ var ApiTest = {
   }
 };
 
-ApiTest.namespace("Utils").Common = (function(){
+HttpClient.namespace("Utils").Common = (function(){
   var getOwnProperty = function(obj, propKey){
     return ({}.hasOwnProperty.call(obj, propKey) ? obj[propKey] : undefined);
   };
@@ -23,8 +23,8 @@ ApiTest.namespace("Utils").Common = (function(){
   }
 }());
 
-ApiTest.Request = (function(){
-  var utils = ApiTest.Utils.Common;
+HttpClient.Request = (function(){
+  var utils = HttpClient.Utils.Common;
   var setHeaders = function(requestChain, options){
     options = options || {};
     Object.keys(options).forEach(function(key){
@@ -63,4 +63,4 @@ ApiTest.Request = (function(){
   return ret;
 }());
 
-exports['ApiTest'] = ApiTest;
+exports['HttpClient'] = HttpClient;

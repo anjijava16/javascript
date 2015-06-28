@@ -1,6 +1,6 @@
 'use strict';
 var expect = require('chai').expect;
-var ApiTest = require('../common/apiTest').ApiTest;
+var HttpClient = require('../common/httpClient').HttpClient;
 var config = require('../config/config.' + (process.env.NODE_ENV || 'development') + '.json');
 
 var removeTaggingFromTitle = function (test){
@@ -24,11 +24,7 @@ var getRequest = function(path, expectedValue, done, options){
     expect(result.length).gt(0);
     done();
   };
-  ApiTest.Request.get(config.url, path, validate);
+  HttpClient.Request.get(config.url, path, validate);
 };
 
-exports.expect = expect;
-exports.ApiTest = ApiTest;
-exports.config = config;
-exports.removeTaggingFromTitle = removeTaggingFromTitle;
 exports.getRequest = getRequest;

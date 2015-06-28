@@ -1,9 +1,9 @@
 'use strict';
 var expect = require('chai').expect;
-var dataDrivenHelper = require('../../helper/dataDrivenHelper');
+var dataDrivenHelper = require('../helper/dataDrivenHelper');
 var fs = require('fs');
 
-var dataDrivenHelper = dataDrivenHelper.ApiTest.GDSitecore.dataDriven;
+var dataDrivenHelper = dataDrivenHelper.HttpClient.GDSitecore.dataDriven;
 
 describe('Smoke Data-Driven Test', function () {
   describe('Module', function () {

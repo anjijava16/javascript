@@ -1,5 +1,5 @@
 'use strict';
-var testHelper = require('../../helper/testHelper');
+var testHelper = require('../helper/testHelper');
 var getRequest = testHelper.getRequest;
 
 describe('Pro Module', function () {

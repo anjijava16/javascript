@@ -69,4 +69,4 @@ ApiTest.Request = function(url){
 ApiTest.Request.prototype = requestProto;
 ApiTest.Request.prototype.constructor = ApiTest.Request;
 
-exports['ApiTest'] = ApiTest;
+exports['HttpClient'] = ApiTest;

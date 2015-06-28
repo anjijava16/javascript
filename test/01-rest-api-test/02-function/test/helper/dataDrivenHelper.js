@@ -1,9 +1,9 @@
 'use strict';
 var expect = require('chai').expect;
-var ApiTest = require('../common/apiTest').ApiTest;
-var config = require('../config/config.' + process.env.NODE_ENV + '.json');
+var HttpClient = require('../common/httpClient').HttpClient;
+var config = require('../config/config.' + (process.env.NODE_ENV || 'development') + '.json');
 
-ApiTest.namespace("GDSitecore").dataDriven = (function () {
+HttpClient.namespace("GDSitecore").dataDriven = (function () {
   var test = function (path) {
     var url = config.url;
     var expectedStatus = 200;
@@ -24,7 +24,7 @@ ApiTest.namespace("GDSitecore").dataDriven = (function () {
           done();
         };
 
-        ApiTest.Request.get(url, path, validate);
+        HttpClient.Request.get(url, path, validate);
       });
     });
   };
@@ -34,4 +34,4 @@ ApiTest.namespace("GDSitecore").dataDriven = (function () {
   }
 }());
 
-exports['ApiTest'] = ApiTest;
+exports['HttpClient'] = HttpClient;

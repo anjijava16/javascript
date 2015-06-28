@@ -46,4 +46,4 @@ ApiTest.namespace("GDSitecore").Web = (function () {
   }
 }());
 
-exports['ApiTest'] = ApiTest;
+exports['HttpClient'] = ApiTest;
