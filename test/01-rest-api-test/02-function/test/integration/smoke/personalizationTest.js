@@ -4,11 +4,11 @@ var config = require('../../config/config.' + process.env.NODE_ENV + '.json');
 var ApiTest = require('../../common/apiTest').ApiTest;
 
 var url = undefined;
-describe('Smoke Personalization', function () {
+describe('Personalization', function () {
   before(function () {
     url = config.url;
   });
-  it('Personalization test1-1', function (done) {
+  it('Personalization test1-1 @Smoke', function (done) {
     var path = '/get-request';
     var queryString = '?q=Ruby&l=LA&e=100';
     path += queryString;
