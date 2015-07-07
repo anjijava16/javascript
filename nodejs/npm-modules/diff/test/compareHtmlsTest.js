@@ -1,4 +1,4 @@
-require('colors')
+require('colors');
 var jsdiff = require('diff');
 var assert = require('assert');
 
