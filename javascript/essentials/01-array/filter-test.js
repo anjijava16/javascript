@@ -6,3 +6,16 @@ var result = numbers.filter(
   }
 );
 console.log(result);
+
+var loopInFilter = numbers.filter(
+    function(item){
+      var arr = [3, 5];
+      var ret = item != arr[0];  // need assign the first filter item
+      for(var i = 1; i < arr.length; i++){ // iterate through the rest of filter items
+        ret = ret && item != arr[i];
+      }
+      console.log(ret);
+      return ret;
+    }
+);
+console.log(loopInFilter);
