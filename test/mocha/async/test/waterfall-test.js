@@ -13,7 +13,7 @@ function getCustomer(query, cb) {
   setTimeout(function () {
     var result = customers.filter(function (item) {
       return item.name === query;
-    })
+    });
     cb(null, result[0]);
   }, 500);
 }
