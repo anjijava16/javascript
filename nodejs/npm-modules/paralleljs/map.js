@@ -7,7 +7,8 @@ var p = new Parallel([0, 1, 2, 3, 4, 5, 6]),
 // If you want to do recursion, make sure the function
 // is named appropriately
 function fib(n) {
+    console.log(n);
     return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
 };
 
-p.map(fib).then(log)
+p.map(fib).then(log);
