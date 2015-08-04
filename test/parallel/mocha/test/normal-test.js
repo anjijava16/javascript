@@ -1,7 +1,7 @@
 describe('foreach data driven', function(){
     var count = 1;
     var testData = [{name: 'Tom'}, {name: 'Ken'}, {name: 'Will'}, {name: 'Harry'}];
-    testData.map(function(data){
+    testData.forEach(function(data){
         it(data.name, function(done){
             console.log(count++);
 
@@ -9,7 +9,7 @@ describe('foreach data driven', function(){
                 console.log("timeout: " + data.name);
                 //assert.ok(false);
                 done();
-            }, 1000);
+            }, 5000);
         });
     });
 });

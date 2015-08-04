@@ -2,7 +2,8 @@
   "name": "application-name",
   "version": "0.0.1",
   "devDependencies": {
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "parallel-mocha": "0.0.7"
   },
   "scripts": {
     "pretest": "npm install",
