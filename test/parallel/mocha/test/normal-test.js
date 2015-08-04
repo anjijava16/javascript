@@ -9,7 +9,7 @@ describe('foreach data driven', function(){
                 console.log("timeout: " + data.name);
                 //assert.ok(false);
                 done();
-            }, 5000);
+            }, 1900);
         });
     });
 });
