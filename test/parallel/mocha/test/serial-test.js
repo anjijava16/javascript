@@ -1,4 +1,4 @@
-describe('foreach data driven', function(){
+describe('serial data driven', function(){
     var count = 1;
     var testData = [{name: 'Tom'}, {name: 'Ken'}, {name: 'Will'}, {name: 'Harry'}];
     testData.forEach(function(data){

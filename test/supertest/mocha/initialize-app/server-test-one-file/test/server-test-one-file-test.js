@@ -14,5 +14,15 @@ describe('GET /users', function(){
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, done);
-  })
+  });
+  it('verify res in callback', function(done){
+    request(app)
+        .get('/user')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .end(function(err, res){
+          if(err) throw err;
+          done();
+        });
+  });
 });

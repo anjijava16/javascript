@@ -20,7 +20,7 @@ app.get('/get-request', function (req, res) {
   res.status(200).send(responseContent);
 });
 app.post('/post-request', function(req, res){
-  console.log('POST: ' + req.body.name);
+  console.log('Server POST: ' + req.body.name);
   res.send('POST: ' + req.body.name);
 });
 app.put('/put-request', function(req, res){
