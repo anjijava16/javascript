@@ -23,3 +23,9 @@ http://thechangelog.com/install-node-js-with-homebrew-on-os-x/
 ```
 
 > `npm install --save-dev diff`
+
+## Reference
+
+### Event loop
+
+https://www.youtube.com/watch?v=8aGhZQkoFbQ
