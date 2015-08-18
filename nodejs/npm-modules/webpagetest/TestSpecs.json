@@ -1,0 +1,96 @@
+{
+  "defaults": {
+    "suiteName": "WebPageTest Results",
+    "operation": "<="
+  },
+  "median": {
+    "firstView": {
+      "requests": {
+        "text": "Num of HTTP Requests: {actual} should be less than {expected}",
+        "max": 80
+      },
+      "render": {
+        "text": "Page Start Render: {actual}ms should be less than {expected}ms",
+        "max": 1500
+      },
+      "docTime": {
+        "text": "Doc Complete Time: {actual}ms should be less than {expected}ms",
+        "max": 2500
+      },
+      "fullyLoaded": {
+        "text": "Full Page Load Time: {actual}ms should be less than {expected}ms",
+        "max": 5000
+      },
+      "score_keep-alive": {
+        "text": "Keep-Alives Turned On: {actual}% should be greater than {expected}%",
+        "min": 90
+      },
+      "score_compress": {
+        "text": "All images compressed: {actual}% should be greater than {expected}%",
+        "min": 99
+      },
+      "score_progressive_jpeg": {
+        "text": "Progessive JPEG turned on: {actual}% should be greater than {expected}%",
+        "min": 90
+      },
+      "score_gzip": {
+        "text": "Objects with GZIP turned on: {actual}% should be greater than {expected}%",
+        "min": 90
+      },
+      "score_cdn": {
+        "text": "Objects hosted on CDN: {actual}% should be greater than {expected}%",
+        "min": 90
+      },
+      "domElements": {
+        "text": "Num of DOM Elements on page: {actual} should be less than {expected}",
+        "max": 1000
+      },
+      "bytesIn": {
+        "text": "Total Page Size: {actual}bytes should be less than {expected}bytes",
+        "max": 1200000
+      },
+      "score_minify": {
+        "text": "All objects minified: {actual}% should be greater than {expected}%",
+        "min": 90
+      },
+      "TTFB": {
+        "text": "Time to First Byte: {actual}ms should be less than {expected}ms",
+        "max": 300
+      },
+      "image_total": {
+        "text": "Total Size of Images: {actual}bytes should be less than {expected}bytes",
+        "max": 850000
+      },
+      "SpeedIndex": {
+        "text": "Speed Index Score: {actual} should be less than {expected}",
+        "max": 2000
+      },
+      "breakdown": {
+        "html": {
+          "requests": {
+            "text": " Number of HTML requests on page: {actual} should be less than {expected}",
+            "max": 10
+          }
+        },
+        "js": {
+          "requests": {
+            "text": " Number of Javascript requests on page: {actual} should be less than {expected}",
+            "max": 4
+          }
+        },
+        "css": {
+          "requests": {
+            "text": " Number of CSS objects on page: {actual} should be less than {expected}",
+            "max": 4
+          }
+        },
+        "image": {
+          "requests": {
+            "text": " Number of images on page: {actual} should be less than {expected}",
+            "max": 50
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "webpagetest": "^0.3.3"
+  },
+  "scripts": {
+    "test": "mocha --recursive --timeout 30000 test"
+  }
+}
